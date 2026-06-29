@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>急診胸痛的快速鑑別診斷 — 醫學堂 MediLearn</title>
+  <meta name="description" content="從病史、心電圖到危險分層，掌握急診胸痛的臨床決策流程。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Noto+Sans:wght@300;400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { primary: '#0D9488', primarydark: '#0F766E', secondary: '#2DD4BF', accent: '#EA580C', ink: '#134E4A', muted: '#5B7A77' },
+      fontFamily: { display: ['Figtree','Noto Sans TC','sans-serif'], sans: ['Noto Sans','Noto Sans TC','sans-serif'] },
+    } } }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .prose p { color: #2c4a47; margin: 1.1rem 0; }
+    .prose h2 { font-family:'Figtree','Noto Sans TC',sans-serif; font-weight:800; font-size:1.5rem; color:var(--color-ink); margin:2.2rem 0 .8rem; }
+    .prose h3 { font-family:'Figtree','Noto Sans TC',sans-serif; font-weight:700; font-size:1.15rem; color:var(--color-ink); margin:1.6rem 0 .5rem; }
+    .prose ul { margin:1rem 0; padding-left:1.3rem; }
+    .prose li { margin:.45rem 0; color:#2c4a47; }
+    .prose li::marker { color: var(--color-primary); }
+    .prose strong { color: var(--color-ink); }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container-wide flex items-center justify-between h-[68px]">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="w-9 h-9 rounded-xl bg-primary text-white grid place-items-center shadow-md"><i data-lucide="stethoscope" class="w-5 h-5"></i></span>
+        <span class="font-display font-extrabold text-xl text-ink">醫學堂<span class="text-secondary text-sm font-bold align-top ml-0.5">MediLearn</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-ink">
+        <a href="courses.html" class="hover:text-primary transition">課程</a>
+        <a href="courses.html" class="hover:text-primary transition">文章</a>
+        <a href="index.html#authors" class="hover:text-primary transition">講師團隊</a>
+        <a href="index.html#features" class="hover:text-primary transition">關於平台</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#" class="btn btn-ghost">登入</a>
+        <a href="#" class="btn btn-primary"><i data-lucide="sparkles" class="w-4 h-4"></i>免費開始</a>
+      </div>
+      <button data-nav-toggle aria-label="開啟選單" aria-expanded="false" class="md:hidden w-10 h-10 grid place-items-center rounded-xl border border-[var(--color-border)] bg-white"><i data-lucide="menu" class="w-5 h-5 text-ink"></i></button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-border)] bg-white">
+      <div class="container-wide py-4 flex flex-col gap-1 text-ink font-medium">
+        <a href="courses.html" class="py-2.5">課程</a><a href="courses.html" class="py-2.5">文章</a>
+        <a href="index.html#authors" class="py-2.5">講師團隊</a><a href="index.html#features" class="py-2.5">關於平台</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-wide py-10 grid lg:grid-cols-[1fr_320px] gap-10 items-start">
+    <!-- ARTICLE COLUMN -->
+    <article>
+      <nav class="text-sm text-muted flex items-center gap-2 mb-5 flex-wrap"><a href="index.html" class="hover:text-primary">首頁</a><i data-lucide="chevron-right" class="w-4 h-4"></i><a href="courses.html" class="hover:text-primary">急診醫學</a><i data-lucide="chevron-right" class="w-4 h-4"></i><span class="text-ink font-medium">急診胸痛的快速鑑別診斷</span></nav>
+
+      <div class="flex gap-2 mb-4"><span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">急診醫學</span><span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)"><i data-lucide="video" class="w-3 h-3"></i>影片 + 文章</span></div>
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl text-ink leading-tight">急診胸痛的快速鑑別診斷</h1>
+
+      <div class="flex items-center flex-wrap gap-x-6 gap-y-3 mt-5 text-sm text-muted">
+        <span class="flex items-center gap-2.5"><span class="avatar" style="width:38px;height:38px;font-size:.95rem;background:linear-gradient(135deg,#0D9488,#2DD4BF)">林</span><span class="text-ink font-semibold">林承佑 醫師</span></span>
+        <span class="flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4"></i>2026 年 6 月 18 日</span>
+        <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4"></i>閱讀 8 分鐘 · 影片 18 分</span>
+        <span class="flex items-center gap-1.5"><i data-lucide="star" class="w-4 h-4 text-accent"></i>4.9</span>
+      </div>
+
+      <!-- VIDEO PLAYER -->
+      <div class="mt-7 card overflow-hidden shadow-lg">
+        <div class="thumb thumb-1" style="aspect-ratio:16/9;cursor:pointer">
+          <span class="play-badge" style="width:72px;height:72px"><i data-lucide="play" class="w-8 h-8 text-primary" style="margin-left:4px"></i></span>
+          <span class="chip absolute top-4 left-4" style="background:rgba(255,255,255,.9);color:var(--color-primary)"><i data-lucide="video" class="w-3.5 h-3.5"></i>課程影片</span>
+          <span class="absolute bottom-4 right-4 text-xs font-semibold text-white bg-black/30 px-2 py-1 rounded-lg backdrop-blur">18:24</span>
+        </div>
+        <div class="flex items-center justify-between p-4 bg-white">
+          <div class="flex items-center gap-3 text-sm text-muted"><i data-lucide="list-video" class="w-5 h-5 text-primary"></i><span>第 1 章，共 5 章 · 含字幕與筆記</span></div>
+          <button class="btn btn-ghost text-sm"><i data-lucide="download" class="w-4 h-4"></i>講義</button>
+        </div>
+      </div>
+
+      <!-- BODY -->
+      <div class="prose mt-8 text-[1.05rem] leading-[1.85]">
+        <p>胸痛是急診最常見、也最不能輕忽的主訴之一。它的鑑別診斷橫跨心臟、肺、主動脈與腸胃道，從良性的肌肉骨骼疼痛，到致命的<strong>急性冠心症、肺栓塞與主動脈剝離</strong>都有可能。本課程帶你建立一套有系統、可重複的評估流程。</p>
+
+        <h2>一、第一時間要排除的「致命六大」</h2>
+        <p>面對急性胸痛，先以「能不能致命」分流，而非急著找到確切診斷。以下六項需要在最初幾分鐘內主動排除：</p>
+        <ul>
+          <li><strong>急性冠心症（ACS）</strong>：典型壓迫性胸痛、轉移痛、合併冷汗。</li>
+          <li><strong>肺栓塞（PE）</strong>：突發呼吸困難、心搏過速、有危險因子。</li>
+          <li><strong>主動脈剝離</strong>：撕裂樣劇痛、兩側血壓差異。</li>
+          <li><strong>張力性氣胸</strong>：單側呼吸音消失、血行動力不穩。</li>
+          <li><strong>心包填塞</strong>：頸靜脈怒張、心音遙遠、低血壓。</li>
+          <li><strong>食道破裂</strong>：劇烈嘔吐後胸痛、皮下氣腫。</li>
+        </ul>
+
+        <h2>二、病史：用 OPQRST 問出關鍵線索</h2>
+        <p>結構化病史能在影像與抽血之前，就大幅縮小鑑別範圍。重點在於疼痛的<strong>性質、誘發與緩解因子、轉移方向</strong>，以及伴隨症狀。別忘了主動詢問心血管危險因子與家族史。</p>
+
+        <h3>危險訊號（Red flags）</h3>
+        <ul>
+          <li>運動時加劇、休息緩解的胸痛</li>
+          <li>合併暈厥、冒冷汗或瀕死感</li>
+          <li>突發、達到最痛只需數秒的劇痛</li>
+        </ul>
+
+        <h2>三、心電圖：到院 10 分鐘內完成</h2>
+        <p>對所有疑似 ACS 的胸痛病人，<strong>應在到院 10 分鐘內取得 12 導程心電圖</strong>並由醫師判讀。重點觀察 ST 段變化、T 波形態與是否有新出現的傳導阻滯，必要時連續追蹤。</p>
+
+        <h2>四、危險分層與後續處置</h2>
+        <p>結合臨床表現、心電圖與高敏感性心肌旋轉蛋白，使用 HEART 等分數進行危險分層，據此決定收治、觀察或安全出院。將「先排除致命病因，再尋找確切診斷」內化為反射，是急診胸痛評估的核心。</p>
+
+        <!-- key takeaway -->
+        <div class="not-prose card p-6 my-8" style="background:var(--color-accent-soft);border-color:#FCD9C4">
+          <div class="flex items-start gap-3"><span class="text-accent flex-none mt-0.5"><i data-lucide="lightbulb" class="w-5 h-5"></i></span><div><p class="font-display font-bold text-ink">重點整理</p><p class="text-sm text-[#7a4a2e] mt-1.5">急性胸痛先分流「能不能致命」，再追求確切診斷；心電圖務必於到院 10 分鐘內完成並判讀。</p></div></div>
+        </div>
+      </div>
+
+      <!-- tags + actions -->
+      <div class="flex items-center justify-between flex-wrap gap-4 mt-8 pt-6 border-t border-[var(--color-border)]">
+        <div class="flex gap-2 flex-wrap"><span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">#胸痛</span><span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">#心電圖</span><span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">#危險分層</span></div>
+        <div class="flex gap-2"><button class="btn btn-ghost text-sm"><i data-lucide="bookmark" class="w-4 h-4"></i>收藏</button><button class="btn btn-ghost text-sm"><i data-lucide="share-2" class="w-4 h-4"></i>分享</button></div>
+      </div>
+
+      <!-- author bio -->
+      <div class="card p-6 mt-8 flex flex-col sm:flex-row gap-5 items-start">
+        <span class="avatar flex-none" style="width:64px;height:64px;font-size:1.4rem;background:linear-gradient(135deg,#0D9488,#2DD4BF)">林</span>
+        <div>
+          <p class="text-xs text-muted font-semibold uppercase tracking-wide">關於作者</p>
+          <h3 class="font-display font-bold text-lg text-ink mt-1">林承佑 醫師</h3>
+          <p class="text-sm text-primary font-medium">急診醫學部 主治醫師 · 28 篇內容</p>
+          <p class="text-sm text-muted mt-2">專注於急重症照護與臨床教學，致力把複雜的急診決策流程，轉化為可被快速應用的思考框架。</p>
+          <a href="index.html#authors" class="btn btn-ghost text-sm mt-4">查看所有內容<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="lg:sticky lg:top-24 space-y-6">
+      <div class="card p-5">
+        <p class="font-display font-bold text-ink mb-1">課程章節</p>
+        <p class="text-xs text-muted mb-4">完成 1 / 5 · 已學習 18 分鐘</p>
+        <div class="w-full h-2 rounded-full bg-muted overflow-hidden mb-4"><div class="h-full rounded-full bg-primary" style="width:20%"></div></div>
+        <ol class="space-y-1 text-sm">
+          <li class="flex items-center gap-2.5 p-2 rounded-lg bg-primary/5 text-ink font-medium"><i data-lucide="play-circle" class="w-4 h-4 text-primary"></i>胸痛的快速鑑別 <span class="ml-auto text-xs text-muted">18:24</span></li>
+          <li class="flex items-center gap-2.5 p-2 rounded-lg text-muted"><i data-lucide="circle" class="w-4 h-4"></i>心電圖判讀重點 <span class="ml-auto text-xs">14:02</span></li>
+          <li class="flex items-center gap-2.5 p-2 rounded-lg text-muted"><i data-lucide="circle" class="w-4 h-4"></i>心肌酵素的解讀 <span class="ml-auto text-xs">09:55</span></li>
+          <li class="flex items-center gap-2.5 p-2 rounded-lg text-muted"><i data-lucide="circle" class="w-4 h-4"></i>HEART 危險分層 <span class="ml-auto text-xs">11:30</span></li>
+          <li class="flex items-center gap-2.5 p-2 rounded-lg text-muted"><i data-lucide="circle" class="w-4 h-4"></i>案例綜合演練 <span class="ml-auto text-xs">16:48</span></li>
+        </ol>
+        <a href="#" class="btn btn-primary w-full justify-center mt-5">繼續下一章<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+
+      <div class="card p-5">
+        <p class="font-display font-bold text-ink mb-4">相關內容</p>
+        <div class="space-y-4">
+          <a href="article.html" class="flex gap-3 group"><span class="w-16 h-16 rounded-xl thumb-2 flex-none"></span><div><p class="text-sm font-semibold text-ink group-hover:text-primary transition line-clamp-2">心電圖判讀入門</p><p class="text-xs text-muted mt-1">陳怡君 醫師</p></div></a>
+          <a href="article.html" class="flex gap-3 group"><span class="w-16 h-16 rounded-xl thumb-5 flex-none"></span><div><p class="text-sm font-semibold text-ink group-hover:text-primary transition line-clamp-2">胸部 X 光：ABCDE 判讀法</p><p class="text-xs text-muted mt-1">王思婷 醫師</p></div></a>
+          <a href="article.html" class="flex gap-3 group"><span class="w-16 h-16 rounded-xl thumb-6 flex-none"></span><div><p class="text-sm font-semibold text-ink group-hover:text-primary transition line-clamp-2">急性中風的辨識與黃金時間</p><p class="text-xs text-muted mt-1">李宗翰 醫師</p></div></a>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink text-white/80 mt-6">
+    <div class="container-wide py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5 text-white"><span class="w-9 h-9 rounded-xl bg-primary grid place-items-center"><i data-lucide="stethoscope" class="w-5 h-5"></i></span><span class="font-display font-extrabold text-lg">醫學堂 MediLearn</span></div>
+      <p class="text-sm text-white/50">© 2026 醫學堂 MediLearn. 內容僅供醫學教育用途，不構成個別醫療建議。</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

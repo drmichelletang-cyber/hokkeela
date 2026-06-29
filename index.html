@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>醫學堂 MediLearn — 讓醫學知識，觸手可及</title>
+  <meta name="description" content="多作者醫學線上學習平台。以文章與影片的方式，提供臨床、醫學教育與健康知識的專業課程。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Noto+Sans:wght@300;400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          primary: '#0D9488', primarydark: '#0F766E', secondary: '#2DD4BF',
+          accent: '#EA580C', ink: '#134E4A', muted: '#5B7A77', surface: '#FFFFFF',
+        },
+        fontFamily: { display: ['Figtree', 'Noto Sans TC', 'sans-serif'], sans: ['Noto Sans', 'Noto Sans TC', 'sans-serif'] },
+      } }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container-wide flex items-center justify-between h-[68px]">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="w-9 h-9 rounded-xl bg-primary text-white grid place-items-center shadow-md">
+          <i data-lucide="stethoscope" class="w-5 h-5"></i>
+        </span>
+        <span class="font-display font-extrabold text-xl text-ink">醫學堂<span class="text-primary"> ·</span><span class="text-secondary text-sm font-bold align-top ml-0.5">MediLearn</span></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-ink">
+        <a href="courses.html" class="hover:text-primary transition">課程</a>
+        <a href="courses.html" class="hover:text-primary transition">文章</a>
+        <a href="#authors" class="hover:text-primary transition">講師團隊</a>
+        <a href="#features" class="hover:text-primary transition">關於平台</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#" class="btn btn-ghost">登入</a>
+        <a href="courses.html" class="btn btn-primary"><i data-lucide="sparkles" class="w-4 h-4"></i>免費開始學習</a>
+      </div>
+
+      <button data-nav-toggle aria-label="開啟選單" aria-expanded="false" class="md:hidden w-10 h-10 grid place-items-center rounded-xl border border-[var(--color-border)] bg-white">
+        <i data-lucide="menu" class="w-5 h-5 text-ink"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-border)] bg-white">
+      <div class="container-wide py-4 flex flex-col gap-1 text-ink font-medium">
+        <a href="courses.html" class="py-2.5">課程</a>
+        <a href="courses.html" class="py-2.5">文章</a>
+        <a href="#authors" class="py-2.5">講師團隊</a>
+        <a href="#features" class="py-2.5">關於平台</a>
+        <a href="courses.html" class="btn btn-primary mt-2 justify-center">免費開始學習</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="relative overflow-hidden">
+    <div class="blob" style="width:340px;height:340px;background:#2DD4BF;top:-80px;right:-60px;"></div>
+    <div class="blob" style="width:300px;height:300px;background:#EA580C;bottom:-120px;left:-80px;opacity:.25;"></div>
+    <div class="container-wide relative grid lg:grid-cols-2 gap-12 items-center py-16 lg:py-24">
+      <div class="reveal">
+        <span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)">
+          <i data-lucide="badge-check" class="w-4 h-4"></i>由臨床醫師與專家共同授課
+        </span>
+        <h1 class="font-display font-extrabold text-ink mt-5 leading-[1.1] text-4xl sm:text-5xl lg:text-[3.4rem]">
+          讓醫學知識，<br /><span class="text-primary">觸手可及</span>。
+        </h1>
+        <p class="mt-5 text-lg text-muted max-w-xl">
+          匯聚各科醫師與學者的多作者學習平台。以<strong class="text-ink font-semibold">深度文章</strong>與<strong class="text-ink font-semibold">高品質影片</strong>，把艱澀的臨床與醫學新知，變成你看得懂、學得會的課程。
+        </p>
+
+        <!-- search -->
+        <form class="mt-7 flex items-center gap-2 bg-white rounded-2xl p-2 shadow-md border border-[var(--color-border)] max-w-lg" onsubmit="return false;">
+          <span class="pl-2 text-muted"><i data-lucide="search" class="w-5 h-5"></i></span>
+          <input type="text" placeholder="搜尋課程、文章或主題，例如：心電圖判讀" class="flex-1 bg-transparent outline-none text-ink placeholder:text-muted text-[15px]" aria-label="搜尋課程" />
+          <a href="courses.html" class="btn btn-primary">搜尋</a>
+        </form>
+
+        <div class="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-muted">
+          <span class="flex items-center gap-2"><i data-lucide="circle-check-big" class="w-4 h-4 text-primary"></i>內容經同儕審閱</span>
+          <span class="flex items-center gap-2"><i data-lucide="circle-check-big" class="w-4 h-4 text-primary"></i>支援 CME 學分追蹤</span>
+          <span class="flex items-center gap-2"><i data-lucide="circle-check-big" class="w-4 h-4 text-primary"></i>隨時隨地學習</span>
+        </div>
+      </div>
+
+      <!-- hero visual: featured video card -->
+      <div class="reveal relative">
+        <div class="card shadow-lg">
+          <div class="thumb thumb-1">
+            <span class="play-badge"><i data-lucide="play" class="w-6 h-6 text-primary" style="margin-left:3px"></i></span>
+            <span class="chip absolute top-4 left-4" style="background:rgba(255,255,255,.9);color:var(--color-primary)"><i data-lucide="video" class="w-3.5 h-3.5"></i>本週精選影片</span>
+            <span class="absolute bottom-4 right-4 text-xs font-semibold text-white bg-black/30 px-2 py-1 rounded-lg backdrop-blur">18:24</span>
+          </div>
+          <div class="p-5">
+            <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">急診醫學</span>
+            <h3 class="font-display font-bold text-lg text-ink mt-3">急診胸痛的快速鑑別診斷</h3>
+            <p class="text-sm text-muted mt-1.5">從病史、心電圖到危險分層，10 分鐘掌握臨床決策流程。</p>
+            <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--color-border)]">
+              <span class="avatar" style="background:linear-gradient(135deg,#0D9488,#2DD4BF)">林</span>
+              <div class="text-sm"><p class="font-semibold text-ink">林承佑 醫師</p><p class="text-muted text-xs">急診醫學部 主治醫師</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="hidden sm:flex card absolute -bottom-6 -left-6 items-center gap-3 p-3 pr-5 shadow-lg bg-white">
+          <span class="w-11 h-11 rounded-xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="users" class="w-5 h-5"></i></span>
+          <div><p class="font-display font-bold text-ink leading-none text-lg">24,800+</p><p class="text-xs text-muted mt-1">醫護學員正在學習</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS BAR ============ -->
+  <section class="border-y border-[var(--color-border)] bg-white">
+    <div class="container-wide grid grid-cols-2 md:grid-cols-4 gap-6 py-8 text-center">
+      <div class="reveal"><p class="font-display font-extrabold text-3xl text-primary">320+</p><p class="text-sm text-muted mt-1">課程與文章</p></div>
+      <div class="reveal"><p class="font-display font-extrabold text-3xl text-primary">58</p><p class="text-sm text-muted mt-1">專科作者與講師</p></div>
+      <div class="reveal"><p class="font-display font-extrabold text-3xl text-primary">24.8k</p><p class="text-sm text-muted mt-1">活躍醫護學員</p></div>
+      <div class="reveal"><p class="font-display font-extrabold text-3xl text-primary">4.9★</p><p class="text-sm text-muted mt-1">平均課程評分</p></div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features" class="container-wide py-20">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">為什麼選擇醫學堂</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">專為醫學學習而生</h2>
+      <p class="text-muted mt-3">不只是把資料搬上網。我們用教學設計的方式，重新組織每一個臨床知識點。</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+      <div class="card p-7 reveal">
+        <span class="w-12 h-12 rounded-2xl bg-primary/10 text-primary grid place-items-center"><i data-lucide="file-text" class="w-6 h-6"></i></span>
+        <h3 class="font-display font-bold text-xl text-ink mt-5">文章 × 影片雙模式</h3>
+        <p class="text-muted mt-2 text-[15px]">每個主題同時提供圖文與影片。想快速查閱看文章，想完整理解看影片，學習節奏由你決定。</p>
+      </div>
+      <div class="card p-7 reveal">
+        <span class="w-12 h-12 rounded-2xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="users-round" class="w-6 h-6"></i></span>
+        <h3 class="font-display font-bold text-xl text-ink mt-5">多作者專科觀點</h3>
+        <p class="text-muted mt-2 text-[15px]">內容由各科臨床醫師與學者共同產出，跨領域、多視角，貼近真實臨床情境。</p>
+      </div>
+      <div class="card p-7 reveal">
+        <span class="w-12 h-12 rounded-2xl bg-secondary/20 text-primarydark grid place-items-center"><i data-lucide="shield-check" class="w-6 h-6"></i></span>
+        <h3 class="font-display font-bold text-xl text-ink mt-5">同儕審閱把關</h3>
+        <p class="text-muted mt-2 text-[15px]">每篇內容上架前皆經同儕審閱，確保資訊正確、引用嚴謹，學得安心。</p>
+      </div>
+      <div class="card p-7 reveal">
+        <span class="w-12 h-12 rounded-2xl bg-primary/10 text-primary grid place-items-center"><i data-lucide="award" class="w-6 h-6"></i></span>
+        <h3 class="font-display font-bold text-xl text-ink mt-5">CME 學分追蹤</h3>
+        <p class="text-muted mt-2 text-[15px]">完成課程自動記錄學習時數，輕鬆累積並匯出繼續教育學分證明。</p>
+      </div>
+      <div class="card p-7 reveal">
+        <span class="w-12 h-12 rounded-2xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="smartphone" class="w-6 h-6"></i></span>
+        <h3 class="font-display font-bold text-xl text-ink mt-5">隨時隨地學習</h3>
+        <p class="text-muted mt-2 text-[15px]">響應式設計，手機、平板、電腦無縫接續。通勤、值班空檔都能進度不中斷。</p>
+      </div>
+      <div class="card p-7 reveal">
+        <span class="w-12 h-12 rounded-2xl bg-secondary/20 text-primarydark grid place-items-center"><i data-lucide="messages-square" class="w-6 h-6"></i></span>
+        <h3 class="font-display font-bold text-xl text-ink mt-5">提問與討論</h3>
+        <p class="text-muted mt-2 text-[15px]">在每個知識點下方直接向作者與同行提問，把零碎疑問變成共同筆記。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ POPULAR CONTENT ============ -->
+  <section class="bg-white border-y border-[var(--color-border)] py-20">
+    <div class="container-wide">
+      <div class="flex items-end justify-between flex-wrap gap-4 reveal">
+        <div>
+          <span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)">熱門精選</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">本月最受歡迎的內容</h2>
+        </div>
+        <a href="courses.html" class="btn btn-ghost">瀏覽全部<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+        <!-- card 1 -->
+        <a href="article.html" class="card reveal block">
+          <div class="thumb thumb-2"><span class="play-badge"><i data-lucide="play" class="w-5 h-5 text-primary" style="margin-left:2px"></i></span><span class="absolute bottom-3 right-3 text-xs font-semibold text-white bg-black/30 px-2 py-0.5 rounded backdrop-blur">12:05</span></div>
+          <div class="p-5">
+            <div class="flex items-center gap-2"><span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">心臟內科</span><span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)"><i data-lucide="video" class="w-3 h-3"></i>影片</span></div>
+            <h3 class="font-display font-bold text-lg text-ink mt-3">心電圖判讀入門：從正常到致命心律</h3>
+            <p class="text-sm text-muted mt-1.5 line-clamp-2">建立一套有系統的判讀步驟，快速辨識危及生命的心律變化。</p>
+            <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--color-border)]">
+              <span class="avatar" style="background:linear-gradient(135deg,#EA580C,#F59E0B)">陳</span>
+              <div class="text-sm"><p class="font-semibold text-ink">陳怡君 醫師</p><p class="text-muted text-xs">心臟內科</p></div>
+            </div>
+          </div>
+        </a>
+        <!-- card 2 -->
+        <a href="article.html" class="card reveal block">
+          <div class="thumb thumb-3"><span class="chip absolute top-3 left-3" style="background:rgba(255,255,255,.9);color:var(--color-accent)"><i data-lucide="file-text" class="w-3 h-3"></i>文章</span></div>
+          <div class="p-5">
+            <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">感染科</span>
+            <h3 class="font-display font-bold text-lg text-ink mt-3">抗生素的正確使用與抗藥性</h3>
+            <p class="text-sm text-muted mt-1.5 line-clamp-2">從作用機轉到臨床選藥原則，一次釐清最常見的用藥迷思。</p>
+            <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--color-border)]">
+              <span class="avatar" style="background:linear-gradient(135deg,#0F766E,#14B8A6)">黃</span>
+              <div class="text-sm"><p class="font-semibold text-ink">黃志明 醫師</p><p class="text-muted text-xs">感染科</p></div>
+            </div>
+          </div>
+        </a>
+        <!-- card 3 -->
+        <a href="article.html" class="card reveal block">
+          <div class="thumb thumb-5"><span class="play-badge"><i data-lucide="play" class="w-5 h-5 text-primary" style="margin-left:2px"></i></span><span class="absolute bottom-3 right-3 text-xs font-semibold text-white bg-black/30 px-2 py-0.5 rounded backdrop-blur">21:40</span></div>
+          <div class="p-5">
+            <div class="flex items-center gap-2"><span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">影像判讀</span><span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)"><i data-lucide="video" class="w-3 h-3"></i>影片</span></div>
+            <h3 class="font-display font-bold text-lg text-ink mt-3">胸部 X 光：系統性判讀的 ABCDE</h3>
+            <p class="text-sm text-muted mt-1.5 line-clamp-2">用一致的順序判讀每一張胸片，不再漏掉關鍵病灶。</p>
+            <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--color-border)]">
+              <span class="avatar" style="background:linear-gradient(135deg,#0891B2,#22D3EE)">王</span>
+              <div class="text-sm"><p class="font-semibold text-ink">王思婷 醫師</p><p class="text-muted text-xs">放射診斷科</p></div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CATEGORIES ============ -->
+  <section class="container-wide py-20">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">探索領域</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">依專科探索知識</h2>
+      <p class="text-muted mt-3">從基礎醫學到臨床各科，找到你正需要的主題。</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">
+      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-primary/10 text-primary grid place-items-center"><i data-lucide="heart-pulse" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">心臟內科</p></a>
+      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="ambulance" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">急診醫學</p></a>
+      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-secondary/20 text-primarydark grid place-items-center"><i data-lucide="baby" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">兒科</p></a>
+      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-primary/10 text-primary grid place-items-center"><i data-lucide="scan" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">影像判讀</p></a>
+      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="microscope" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">感染科</p></a>
+      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-secondary/20 text-primarydark grid place-items-center"><i data-lucide="brain" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">神經內科</p></a>
+    </div>
+  </section>
+
+  <!-- ============ AUTHORS ============ -->
+  <section id="authors" class="bg-white border-y border-[var(--color-border)] py-20">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)">多作者平台</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">向真正的臨床專家學習</h2>
+        <p class="text-muted mt-3">58 位來自各專科的醫師與學者，把第一線經驗濃縮成課程。</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+        <div class="card p-6 text-center reveal">
+          <span class="avatar mx-auto" style="width:72px;height:72px;font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#2DD4BF)">林</span>
+          <h3 class="font-display font-bold text-lg text-ink mt-4">林承佑 醫師</h3>
+          <p class="text-sm text-primary font-medium">急診醫學部 主治醫師</p>
+          <p class="text-xs text-muted mt-2">28 篇內容 · 4.9★</p>
+        </div>
+        <div class="card p-6 text-center reveal">
+          <span class="avatar mx-auto" style="width:72px;height:72px;font-size:1.5rem;background:linear-gradient(135deg,#EA580C,#F59E0B)">陳</span>
+          <h3 class="font-display font-bold text-lg text-ink mt-4">陳怡君 醫師</h3>
+          <p class="text-sm text-primary font-medium">心臟內科</p>
+          <p class="text-xs text-muted mt-2">19 篇內容 · 4.8★</p>
+        </div>
+        <div class="card p-6 text-center reveal">
+          <span class="avatar mx-auto" style="width:72px;height:72px;font-size:1.5rem;background:linear-gradient(135deg,#0891B2,#22D3EE)">王</span>
+          <h3 class="font-display font-bold text-lg text-ink mt-4">王思婷 醫師</h3>
+          <p class="text-sm text-primary font-medium">放射診斷科</p>
+          <p class="text-xs text-muted mt-2">23 篇內容 · 5.0★</p>
+        </div>
+        <div class="card p-6 text-center reveal">
+          <span class="avatar mx-auto" style="width:72px;height:72px;font-size:1.5rem;background:linear-gradient(135deg,#7C3AED,#2DD4BF)">黃</span>
+          <h3 class="font-display font-bold text-lg text-ink mt-4">黃志明 醫師</h3>
+          <p class="text-sm text-primary font-medium">感染科</p>
+          <p class="text-xs text-muted mt-2">31 篇內容 · 4.9★</p>
+        </div>
+      </div>
+      <div class="text-center mt-10 reveal">
+        <a href="#" class="btn btn-accent"><i data-lucide="pen-line" class="w-4 h-4"></i>成為平台作者</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section class="container-wide py-20">
+    <div class="relative overflow-hidden rounded-[32px] px-8 py-16 text-center reveal" style="background:linear-gradient(135deg,var(--color-primary),var(--color-primarydark))">
+      <div class="blob" style="width:260px;height:260px;background:#EA580C;top:-60px;right:-40px;opacity:.4"></div>
+      <div class="blob" style="width:240px;height:240px;background:#2DD4BF;bottom:-80px;left:-40px;opacity:.5"></div>
+      <div class="relative">
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">今天就開始你的醫學學習旅程</h2>
+        <p class="text-white/85 mt-4 max-w-xl mx-auto">免費註冊，立即解鎖數十堂入門課程。隨時升級，學習無上限。</p>
+        <div class="flex items-center justify-center gap-3 mt-8 flex-wrap">
+          <a href="courses.html" class="btn btn-accent">免費開始</a>
+          <a href="courses.html" class="btn bg-white text-primary">瀏覽課程</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-ink text-white/80">
+    <div class="container-wide py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-2.5 text-white">
+          <span class="w-9 h-9 rounded-xl bg-primary grid place-items-center"><i data-lucide="stethoscope" class="w-5 h-5"></i></span>
+          <span class="font-display font-extrabold text-xl">醫學堂 MediLearn</span>
+        </div>
+        <p class="text-sm mt-4 text-white/60 max-w-xs">多作者醫學線上學習平台，讓專業知識真正被理解、被使用。</p>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-white mb-4">學習</h4>
+        <ul class="space-y-2.5 text-sm"><li><a href="courses.html" class="hover:text-secondary">所有課程</a></li><li><a href="courses.html" class="hover:text-secondary">精選文章</a></li><li><a href="#" class="hover:text-secondary">CME 學分</a></li><li><a href="#" class="hover:text-secondary">學習路徑</a></li></ul>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-white mb-4">平台</h4>
+        <ul class="space-y-2.5 text-sm"><li><a href="#authors" class="hover:text-secondary">講師團隊</a></li><li><a href="#" class="hover:text-secondary">成為作者</a></li><li><a href="#features" class="hover:text-secondary">關於我們</a></li><li><a href="#" class="hover:text-secondary">常見問題</a></li></ul>
+      </div>
+      <div>
+        <h4 class="font-display font-bold text-white mb-4">訂閱新知</h4>
+        <p class="text-sm text-white/60 mb-3">每週精選一篇深度醫學內容，寄到你的信箱。</p>
+        <form class="flex gap-2" onsubmit="return false;">
+          <input type="email" placeholder="你的 Email" class="flex-1 rounded-xl px-3 py-2.5 text-ink text-sm outline-none" aria-label="Email" />
+          <button class="btn btn-accent px-4">訂閱</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="container-wide py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/50">
+        <p>© 2026 醫學堂 MediLearn. 內容僅供醫學教育用途，不構成個別醫療建議。</p>
+        <div class="flex gap-5"><a href="#" class="hover:text-white">隱私政策</a><a href="#" class="hover:text-white">使用條款</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
