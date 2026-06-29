@@ -1,126 +1,195 @@
 /* ============================================================
-   醫學堂 MediLearn — Design Tokens & Components
-   Palette: trustworthy teal + energetic orange
-   Fonts: Figtree (headings) / Noto Sans (body)
+   福氣學院 Hokkeela — Editorial / warm-paper design system
+   華人長壽醫學知識平台 · Longevity Science
+   Aesthetic: cream paper + serif headlines + black + burnt orange,
+   hard offset shadows (editorial / light brutalism)
    ============================================================ */
 
 :root {
-  --color-primary: #0D9488;
-  --color-primary-dark: #0F766E;
-  --color-on-primary: #FFFFFF;
-  --color-secondary: #2DD4BF;
-  --color-accent: #EA580C;
-  --color-accent-soft: #FFF1EA;
-  --color-bg: #F0FDFA;
-  --color-surface: #FFFFFF;
-  --color-fg: #134E4A;
-  --color-muted-fg: #5B7A77;
-  --color-muted: #E8F1F4;
-  --color-border: #D7ECE9;
-  --color-ring: #0D9488;
+  --paper: #F4EEE1;        /* main background */
+  --paper-2: #EAE0CB;      /* alternate band */
+  --card: #FBF7EE;         /* card surface */
+  --ink: #1C1814;          /* near-black warm */
+  --ink-soft: #574E42;     /* muted body text (>=4.5:1 on paper) */
+  --line: #D8C9AE;         /* rules / borders */
+  --orange: #C2410C;       /* accent text / links */
+  --orange-bright: #EA580C;/* sticker / highlights */
+  --orange-soft: #F6E3D1;  /* soft orange fill */
+  --seal: #A8362B;         /* restrained cinnabar — used ONLY for the seal stamp accent */
 
-  --shadow-sm: 0 1px 2px rgba(19, 78, 74, .06), 0 1px 3px rgba(19, 78, 74, .05);
-  --shadow-md: 0 4px 12px rgba(19, 78, 74, .08), 0 2px 4px rgba(19, 78, 74, .04);
-  --shadow-lg: 0 18px 40px -12px rgba(13, 148, 136, .25), 0 8px 16px -8px rgba(19, 78, 74, .12);
-
-  --radius-card: 22px;
-  --radius-btn: 14px;
+  --shadow-hard: 6px 6px 0 var(--ink);
+  --shadow-hard-sm: 4px 4px 0 var(--ink);
+  --radius: 6px;
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: 'Noto Sans', system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
-  color: var(--color-fg);
-  background: var(--color-bg);
-  line-height: 1.65;
+  font-family: 'Noto Sans TC', system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  color: var(--ink);
+  background-color: var(--paper);
+  /* faint grid-paper texture */
+  background-image:
+    linear-gradient(rgba(28,24,20,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28,24,20,.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, .font-display {
-  font-family: 'Figtree', 'Noto Sans', sans-serif;
-  letter-spacing: -0.02em;
+  font-family: 'Noto Serif TC', 'Noto Serif', serif;
+  letter-spacing: -0.01em;
 }
 
 a { color: inherit; text-decoration: none; }
 
-/* ---------- Layout helpers ---------- */
-.container-wide { max-width: 1200px; margin-inline: auto; padding-inline: 1.25rem; }
+/* ---------- Layout ---------- */
+.container-wide { max-width: 1180px; margin-inline: auto; padding-inline: 1.5rem; }
+
+/* uppercase latin eyebrow label */
+.eyebrow {
+  font-family: 'Figtree', sans-serif; text-transform: uppercase;
+  letter-spacing: .22em; font-size: .72rem; font-weight: 700; color: var(--orange);
+}
+
+/* hand-drawn underline accent under a heading word */
+.ul-accent { position: relative; color: var(--orange); display: inline-block; }
+.ul-accent::after {
+  content: ""; position: absolute; left: 0; right: -2px; bottom: 4px; height: 10px;
+  background: rgba(234,88,12,.25); z-index: -1; border-radius: 2px;
+}
 
 /* ---------- Buttons ---------- */
 .btn {
-  display: inline-flex; align-items: center; gap: .5rem;
-  padding: .8rem 1.4rem; border-radius: var(--radius-btn);
-  font-weight: 600; font-size: .95rem; cursor: pointer;
-  border: 1px solid transparent; transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-  white-space: nowrap;
+  display: inline-flex; align-items: center; gap: .55rem;
+  padding: .85rem 1.5rem; border-radius: var(--radius);
+  font-weight: 700; font-size: .95rem; cursor: pointer;
+  border: 1.5px solid var(--ink); transition: transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease;
+  white-space: nowrap; font-family: 'Noto Sans TC', sans-serif;
 }
-.btn:active { transform: scale(.97); }
-.btn-primary { background: var(--color-primary); color: #fff; box-shadow: var(--shadow-md); }
-.btn-primary:hover { background: var(--color-primary-dark); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-.btn-accent { background: var(--color-accent); color: #fff; box-shadow: 0 10px 22px -8px rgba(234,88,12,.5); }
-.btn-accent:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -10px rgba(234,88,12,.55); }
-.btn-ghost { background: #fff; color: var(--color-primary); border-color: var(--color-border); }
-.btn-ghost:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-dark { background: var(--ink); color: #FBF7EE; box-shadow: var(--shadow-hard-sm); }
+.btn-dark:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--orange); }
+.btn-orange { background: var(--orange-bright); color: #fff; border-color: var(--ink); box-shadow: var(--shadow-hard-sm); }
+.btn-orange:hover { transform: translate(-2px,-2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn-outline { background: transparent; color: var(--ink); }
+.btn-outline:hover { background: var(--ink); color: #FBF7EE; }
+.btn:active { transform: translate(0,0); box-shadow: var(--shadow-hard-sm); }
 
-/* ---------- Cards ---------- */
+/* ---------- Cards (hard offset shadow) ---------- */
 .card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  background: var(--card); border: 1.5px solid var(--ink); border-radius: var(--radius);
+  box-shadow: var(--shadow-hard); transition: transform .18s ease, box-shadow .18s ease;
 }
-.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--color-secondary); }
+.card-hover:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--ink); }
+.card-flat { background: var(--card); border: 1.5px solid var(--line); border-radius: var(--radius); }
 
+/* tag / chip */
 .chip {
-  display: inline-flex; align-items: center; gap: .35rem;
-  font-size: .78rem; font-weight: 600; padding: .3rem .7rem; border-radius: 999px;
+  display: inline-flex; align-items: center; gap: .4rem; font-size: .8rem; font-weight: 700;
+  padding: .32rem .8rem; border-radius: 999px; border: 1.5px solid var(--ink); background: var(--card);
+}
+.chip-orange { background: var(--orange-soft); border-color: var(--orange); color: var(--orange); }
+
+/* rotated "福氣啦" sticker */
+.sticker {
+  display: inline-grid; place-items: center; transform: rotate(8deg);
+  background: var(--orange-bright); color: #fff; font-family: 'Noto Serif TC', serif; font-weight: 900;
+  padding: .5rem .9rem; border: 1.5px solid var(--ink); box-shadow: var(--shadow-hard-sm); border-radius: 4px;
 }
 
-/* gradient thumbnails (no external images required) */
-.thumb { position: relative; aspect-ratio: 16 / 10; display: grid; place-items: center; }
-.thumb-1 { background: linear-gradient(135deg, #0D9488, #2DD4BF); }
-.thumb-2 { background: linear-gradient(135deg, #0EA5A0, #34D399); }
-.thumb-3 { background: linear-gradient(135deg, #EA580C, #F59E0B); }
-.thumb-4 { background: linear-gradient(135deg, #0F766E, #14B8A6); }
-.thumb-5 { background: linear-gradient(135deg, #0891B2, #22D3EE); }
-.thumb-6 { background: linear-gradient(135deg, #7C3AED, #2DD4BF); }
-.thumb::after {
-  content: ""; position: absolute; inset: 0;
-  background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,.25), transparent 40%);
+/* dotted/solid rule */
+.rule { height: 1.5px; background: var(--line); border: 0; }
+
+/* ---------- 克制的廟宇元素 (restrained temple cues) ---------- */
+
+/* 朱印 — cinnabar seal stamp (decorative accent, use sparingly) */
+.seal {
+  display: grid; place-items: center; width: 56px; height: 56px; flex: none;
+  border-radius: 8px; border: 2.5px solid var(--seal); color: var(--seal);
+  font-family: 'Noto Serif TC', serif; font-weight: 900; font-size: 1.6rem;
+  letter-spacing: 0; background:
+    repeating-linear-gradient(45deg, rgba(168,54,43,.05) 0 3px, transparent 3px 6px);
+  transform: rotate(-4deg);
+}
+.seal-sm { width: 38px; height: 38px; font-size: 1.05rem; border-width: 2px; border-radius: 6px; }
+
+/* 窗花 — subtle temple lattice divider (faint, geometric, not religious) */
+.lattice {
+  height: 18px; width: 100%;
+  background-image:
+    linear-gradient(45deg, var(--line) 1px, transparent 1px),
+    linear-gradient(-45deg, var(--line) 1px, transparent 1px);
+  background-size: 14px 18px; opacity: .7;
 }
 
-/* play badge over video thumbnails */
+/* 香雲紋 corner flourish kept minimal via thin double border on cards when desired */
+.framed { box-shadow: var(--shadow-hard), inset 0 0 0 3px var(--card), inset 0 0 0 4.5px var(--line); }
+
+/* course thumbnails — flat editorial blocks, no external images */
+.thumb { position: relative; aspect-ratio: 16/10; display: grid; place-items: center; border-bottom: 1.5px solid var(--ink); }
+.thumb-1 { background: #E9DCC0; } .thumb-2 { background: #E7D2B8; }
+.thumb-3 { background: #EAD9C2; } .thumb-4 { background: #E3D8BE; }
+.thumb-5 { background: #ECD7BD; } .thumb-6 { background: #E6DBC6; }
+.thumb .glyph { color: var(--ink); opacity: .55; }
 .play-badge {
-  position: absolute; z-index: 2; width: 56px; height: 56px; border-radius: 999px;
-  background: rgba(255,255,255,.92); display: grid; place-items: center;
-  box-shadow: var(--shadow-md); transition: transform .2s ease;
+  position: absolute; z-index: 2; width: 54px; height: 54px; border-radius: 999px;
+  background: var(--orange-bright); border: 1.5px solid var(--ink); display: grid; place-items: center;
+  color: #fff; box-shadow: var(--shadow-hard-sm);
 }
-.card:hover .play-badge { transform: scale(1.12); }
 
-/* author avatar (initials) */
+/* author avatar — square, editorial */
 .avatar {
-  width: 44px; height: 44px; border-radius: 999px; display: grid; place-items: center;
-  color: #fff; font-weight: 700; font-family: 'Figtree', sans-serif; flex: none;
+  width: 46px; height: 46px; border-radius: 6px; display: grid; place-items: center;
+  color: #fff; font-weight: 800; font-family: 'Noto Serif TC', serif; flex: none;
+  border: 1.5px solid var(--ink); background: var(--orange-bright);
 }
+
+/* price comparison */
+.price-old { text-decoration: line-through; color: var(--ink-soft); font-weight: 500; }
+.price-new { color: var(--orange); font-weight: 800; }
 
 /* ---------- Header ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(255,255,255,.82); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border);
+  background: rgba(244,238,225,.9); backdrop-filter: blur(8px);
+  border-bottom: 1.5px solid var(--ink);
 }
 
-/* ---------- Scroll reveal ---------- */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity .45s ease, transform .45s ease; }
-.reveal.in { opacity: 1; transform: none; }
+/* ---------- 許願池 wishing pool ---------- */
+.wish-well {
+  position: relative; width: 200px; height: 200px; border: none; background: transparent; cursor: pointer;
+  display: grid; place-items: center; transition: transform .15s ease;
+}
+.wish-well:hover { transform: translateY(-3px); }
+.wish-well:active { transform: scale(.97); }
+.well-ring {
+  width: 170px; height: 170px; border-radius: 999px; border: 6px solid var(--ink);
+  background:
+    radial-gradient(circle at 50% 60%, #F3CFA0 0%, #E8B179 45%, #C2410C 100%);
+  box-shadow: var(--shadow-hard); display: grid; place-items: center; overflow: hidden; position: relative;
+}
+.well-ring::before {
+  content: ""; position: absolute; inset: 18px; border-radius: 999px; border: 2px dashed rgba(255,255,255,.5);
+}
+.well-ring .well-emblem { color: #fff; font-family: 'Noto Serif TC', serif; font-weight: 900; font-size: 2.4rem; text-shadow: 0 2px 6px rgba(0,0,0,.25); }
+@keyframes ripple { 0%{transform:scale(.6);opacity:.7} 100%{transform:scale(1.5);opacity:0} }
+.wish-well.tossing .well-ring::after {
+  content:""; position:absolute; width:60px; height:60px; border-radius:999px; border:3px solid rgba(255,255,255,.8);
+  animation: ripple .6s ease-out infinite;
+}
 
-/* floating blobs */
-.blob { position: absolute; border-radius: 999px; filter: blur(50px); opacity: .5; z-index: 0; }
+/* fortune / wish slip */
+.wish-slip { background: var(--card); border: 1.5px solid var(--ink); border-radius: var(--radius); box-shadow: var(--shadow-hard); padding: 1.75rem; text-align: left; }
+@keyframes slipIn { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
+.wish-slip.in { animation: slipIn .4s ease; }
+.slip-level { display:inline-flex; align-items:center; gap:.35rem; font-weight:800; font-family:'Noto Serif TC',serif; color:#fff; padding:.28rem .8rem; border-radius:4px; background: var(--orange-bright); border:1.5px solid var(--ink); }
+
+/* ---------- Scroll reveal ---------- */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .45s ease, transform .45s ease; }
+.reveal.in { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto; }
@@ -129,73 +198,5 @@ a { color: inherit; text-decoration: none; }
 
 /* focus visibility */
 a:focus-visible, button:focus-visible, input:focus-visible {
-  outline: 3px solid var(--color-ring); outline-offset: 2px; border-radius: 8px;
-}
-
-/* ============================================================
-   求籤小遊戲 — Fortune stick game
-   ============================================================ */
-.fortune-cup {
-  position: relative; width: 150px; height: 200px; cursor: pointer; border: none;
-  background: transparent; display: grid; place-items: end center;
-  transition: transform .2s ease;
-}
-.fortune-cup:hover { transform: translateY(-3px); }
-.fortune-cup:active { transform: scale(.97); }
-
-/* the bamboo sticks poking out the top */
-.cup-sticks { position: absolute; bottom: 132px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px; z-index: 1; }
-.cup-sticks i {
-  display: block; width: 7px; border-radius: 4px 4px 0 0;
-  background: linear-gradient(#F5E6C8, #E8C887); box-shadow: inset -1px 0 0 rgba(0,0,0,.06);
-}
-.cup-sticks i:nth-child(1){height:46px} .cup-sticks i:nth-child(2){height:68px}
-.cup-sticks i:nth-child(3){height:54px} .cup-sticks i:nth-child(4){height:74px}
-.cup-sticks i:nth-child(5){height:50px} .cup-sticks i:nth-child(6){height:62px}
-.cup-sticks i:nth-child(7){height:44px}
-
-/* the cup body */
-.cup-body {
-  position: relative; z-index: 2; width: 130px; height: 140px;
-  background: linear-gradient(160deg, #C0392B, #9E2A20);
-  border-radius: 14px 14px 22px 22px;
-  box-shadow: var(--shadow-lg), inset 0 -10px 24px rgba(0,0,0,.18);
-  display: grid; place-items: center;
-}
-.cup-body::before {
-  content: ""; position: absolute; top: -8px; left: -6px; right: -6px; height: 22px;
-  background: linear-gradient(#D4af37, #BE9226); border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,.18);
-}
-.cup-body .cup-emblem {
-  width: 56px; height: 56px; border-radius: 999px; border: 2px solid rgba(255,255,255,.6);
-  display: grid; place-items: center; color: #FBE9C6; font-family: 'Figtree', sans-serif;
-  font-weight: 800; font-size: 1.6rem;
-}
-
-@keyframes cupShake {
-  0%,100% { transform: rotate(0) }
-  20% { transform: rotate(-7deg) translateY(-4px) }
-  40% { transform: rotate(6deg) }
-  60% { transform: rotate(-5deg) translateY(-3px) }
-  80% { transform: rotate(4deg) }
-}
-.fortune-cup.shaking { animation: cupShake .42s ease-in-out infinite; }
-
-/* the drawn fortune slip */
-.fortune-slip {
-  background: linear-gradient(170deg, #FFFDF7, #FFF6E6);
-  border: 1px solid #EBD7A8; border-radius: var(--radius-card);
-  box-shadow: var(--shadow-lg); padding: 1.75rem; text-align: left;
-}
-@keyframes slipIn { from { opacity: 0; transform: translateY(18px) scale(.96) } to { opacity: 1; transform: none } }
-.fortune-slip.in { animation: slipIn .5s cubic-bezier(.2,.8,.2,1); }
-.slip-level {
-  display: inline-flex; align-items: center; gap: .35rem; font-weight: 800;
-  font-family: 'Figtree', sans-serif; color: #fff; padding: .28rem .8rem; border-radius: 999px;
-  background: linear-gradient(#C0392B, #9E2A20); box-shadow: 0 4px 10px rgba(158,42,32,.3);
-}
-@media (prefers-reduced-motion: reduce) {
-  .fortune-cup.shaking { animation: none; }
-  .fortune-slip.in { animation: none; }
+  outline: 3px solid var(--orange-bright); outline-offset: 2px; border-radius: 4px;
 }

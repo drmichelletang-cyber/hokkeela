@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>福氣學院 Hokkeela — 讓醫學知識，觸手可及</title>
-  <meta name="description" content="多作者醫學線上學習平台。以文章與影片的方式，提供臨床、醫學教育與健康知識的專業課程。" />
+  <title>福氣學院 Hokkeela — 華人長壽醫學知識平台</title>
+  <meta name="description" content="福氣，不是求來的，是佈局來的。用實證醫學，把『活得久又活得好』，從運氣變成你能親手規劃的福氣。多作者長壽醫學課程平台。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Noto+Sans:wght@300;400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/tailwind.css" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
@@ -15,341 +15,270 @@
 
   <!-- ============ HEADER ============ -->
   <header class="site-header">
-    <div class="container-wide flex items-center justify-between h-[68px]">
-      <a href="index.html" class="flex items-center gap-2.5">
-        <span class="w-9 h-9 rounded-xl bg-primary text-white grid place-items-center shadow-md">
-          <i data-lucide="stethoscope" class="w-5 h-5"></i>
+    <div class="container-wide flex items-center justify-between h-[72px]">
+      <a href="index.html" class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-md bg-orangebright text-white grid place-items-center border-[1.5px] border-ink font-display font-black text-xl">福</span>
+        <span class="leading-tight">
+          <span class="font-display font-black text-lg text-ink">福氣學院 <span class="eyebrow align-middle ml-1">Hokkeela</span></span>
+          <span class="block text-[11px] text-inksoft">華人長壽醫學知識平台 · Longevity Science</span>
         </span>
-        <span class="font-display font-extrabold text-xl text-ink">福氣學院<span class="text-primary"> ·</span><span class="text-secondary text-sm font-bold align-top ml-0.5">Hokkeela</span></span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-ink">
-        <a href="courses.html" class="hover:text-primary transition">課程</a>
-        <a href="courses.html" class="hover:text-primary transition">文章</a>
-        <a href="#fortune" class="hover:text-accent transition flex items-center gap-1"><i data-lucide="sparkles" class="w-4 h-4 text-accent"></i>每日求籤</a>
-        <a href="#authors" class="hover:text-primary transition">講師團隊</a>
-        <a href="#features" class="hover:text-primary transition">關於平台</a>
+      <nav class="hidden lg:flex items-center gap-7 text-[15px] font-medium text-ink">
+        <a href="#about" class="hover:text-orange transition">關於網站</a>
+        <a href="#authors" class="hover:text-orange transition">作者介紹</a>
+        <a href="courses.html" class="hover:text-orange transition">課程分類</a>
+        <a href="#membership" class="hover:text-orange transition">會員方案</a>
+        <a href="#fortune" class="hover:text-orange transition">福氣籤詩</a>
       </nav>
 
-      <div class="hidden md:flex items-center gap-3">
-        <a href="#" class="btn btn-ghost">登入</a>
-        <a href="courses.html" class="btn btn-primary"><i data-lucide="sparkles" class="w-4 h-4"></i>免費開始學習</a>
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="courses.html" aria-label="購物車" class="w-10 h-10 grid place-items-center rounded-md border-[1.5px] border-ink bg-card hover:bg-paper2 transition"><i data-lucide="shopping-cart" class="w-5 h-5"></i></a>
+        <a href="#membership" class="btn btn-dark">加入會員</a>
       </div>
 
-      <button data-nav-toggle aria-label="開啟選單" aria-expanded="false" class="md:hidden w-10 h-10 grid place-items-center rounded-xl border border-[var(--color-border)] bg-white">
+      <button data-nav-toggle aria-label="開啟選單" aria-expanded="false" class="lg:hidden w-10 h-10 grid place-items-center rounded-md border-[1.5px] border-ink bg-card">
         <i data-lucide="menu" class="w-5 h-5 text-ink"></i>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-border)] bg-white">
+    <div id="mobile-menu" class="hidden lg:hidden border-t-[1.5px] border-ink bg-card">
       <div class="container-wide py-4 flex flex-col gap-1 text-ink font-medium">
-        <a href="courses.html" class="py-2.5">課程</a>
-        <a href="courses.html" class="py-2.5">文章</a>
-        <a href="#fortune" class="py-2.5">每日求籤</a>
-        <a href="#authors" class="py-2.5">講師團隊</a>
-        <a href="#features" class="py-2.5">關於平台</a>
-        <a href="courses.html" class="btn btn-primary mt-2 justify-center">免費開始學習</a>
+        <a href="#about" class="py-2.5">關於網站</a>
+        <a href="#authors" class="py-2.5">作者介紹</a>
+        <a href="courses.html" class="py-2.5">課程分類</a>
+        <a href="#membership" class="py-2.5">會員方案</a>
+        <a href="#fortune" class="py-2.5">福氣籤詩</a>
+        <a href="#membership" class="btn btn-dark mt-2 justify-center">加入會員</a>
       </div>
     </div>
   </header>
 
   <!-- ============ HERO ============ -->
-  <section class="relative overflow-hidden">
-    <div class="blob" style="width:340px;height:340px;background:#2DD4BF;top:-80px;right:-60px;"></div>
-    <div class="blob" style="width:300px;height:300px;background:#EA580C;bottom:-120px;left:-80px;opacity:.25;"></div>
-    <div class="container-wide relative grid lg:grid-cols-2 gap-12 items-center py-16 lg:py-24">
-      <div class="reveal">
-        <span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)">
-          <i data-lucide="badge-check" class="w-4 h-4"></i>由臨床醫師與專家共同授課
-        </span>
-        <h1 class="font-display font-extrabold text-ink mt-5 leading-[1.1] text-4xl sm:text-5xl lg:text-[3.4rem]">
-          讓醫學知識，<br /><span class="text-primary">觸手可及</span>。
-        </h1>
-        <p class="mt-5 text-lg text-muted max-w-xl">
-          匯聚各科醫師與學者的多作者學習平台。以<strong class="text-ink font-semibold">深度文章</strong>與<strong class="text-ink font-semibold">高品質影片</strong>，把艱澀的臨床與醫學新知，變成你看得懂、學得會的課程。
+  <section class="container-wide pt-14 pb-20 grid lg:grid-cols-[1.05fr_.95fr] gap-12 items-center">
+    <div class="reveal">
+      <span class="chip"><span class="w-2 h-2 rounded-full bg-orangebright"></span>華人長壽醫學編輯室 · 醫師輪值</span>
+      <h1 class="font-display font-black text-ink mt-6 leading-[1.15] text-5xl sm:text-6xl">
+        福氣，<br />不是求來的，<br /><span class="ul-accent">是佈局來的</span>。
+      </h1>
+      <p class="mt-6 text-lg text-inksoft max-w-xl">
+        用實證醫學，把「<strong class="text-ink">活得久又活得好</strong>」，從運氣，變成你能親手規劃的福氣。
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="courses.html" class="btn btn-dark">看全部課程<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+        <a href="#membership" class="btn btn-outline">會員方案 · 旗艦課免費</a>
+      </div>
+      <hr class="rule my-9" />
+      <div class="grid grid-cols-3 gap-6">
+        <div><p class="eyebrow">駐站醫師</p><p class="font-display font-black text-3xl text-ink mt-1">1<span class="text-inksoft text-xl"> / 4</span></p></div>
+        <div><p class="eyebrow">線上課程</p><p class="font-display font-black text-3xl text-ink mt-1">6 <span class="text-inksoft text-xl">門</span></p></div>
+        <div><p class="eyebrow">知識主題</p><p class="font-display font-black text-3xl text-ink mt-1">6 <span class="text-inksoft text-xl">軸</span></p></div>
+      </div>
+    </div>
+
+    <!-- editor card -->
+    <div class="reveal relative">
+      <span class="sticker absolute -top-5 -right-3 z-10 text-lg">福氣啦</span>
+      <div class="card p-7">
+        <div class="flex items-center justify-between">
+          <p class="eyebrow">本月編輯 · JUN 2026</p>
+          <span class="seal seal-sm">壽</span>
+        </div>
+        <div class="flex items-center gap-4 mt-4">
+          <span class="avatar" style="width:60px;height:60px;font-size:1.5rem">叮</span>
+          <div>
+            <h3 class="font-display font-black text-2xl text-ink">叮噹醫師</h3>
+            <p class="text-sm text-inksoft">MRCP UK · 老年與長壽醫學顧問</p>
+          </div>
+        </div>
+        <p class="mt-5 text-[15px] leading-relaxed text-ink border-l-[3px] border-orange pl-4">
+          「先有老年醫學的臨床地基，才有負責任的長壽醫學。我不賣抗老幻想，只幫你把日子佈局好。」
         </p>
-
-        <!-- search -->
-        <form class="mt-7 flex items-center gap-2 bg-white rounded-2xl p-2 shadow-md border border-[var(--color-border)] max-w-lg" onsubmit="return false;">
-          <span class="pl-2 text-muted"><i data-lucide="search" class="w-5 h-5"></i></span>
-          <input type="text" placeholder="搜尋課程、文章或主題，例如：心電圖判讀" class="flex-1 bg-transparent outline-none text-ink placeholder:text-muted text-[15px]" aria-label="搜尋課程" />
-          <a href="courses.html" class="btn btn-primary">搜尋</a>
-        </form>
-
-        <div class="mt-7 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-muted">
-          <span class="flex items-center gap-2"><i data-lucide="circle-check-big" class="w-4 h-4 text-primary"></i>內容經同儕審閱</span>
-          <span class="flex items-center gap-2"><i data-lucide="circle-check-big" class="w-4 h-4 text-primary"></i>支援 CME 學分追蹤</span>
-          <span class="flex items-center gap-2"><i data-lucide="circle-check-big" class="w-4 h-4 text-primary"></i>隨時隨地學習</span>
-        </div>
-      </div>
-
-      <!-- hero visual: featured video card -->
-      <div class="reveal relative">
-        <div class="card shadow-lg">
-          <div class="thumb thumb-1">
-            <span class="play-badge"><i data-lucide="play" class="w-6 h-6 text-primary" style="margin-left:3px"></i></span>
-            <span class="chip absolute top-4 left-4" style="background:rgba(255,255,255,.9);color:var(--color-primary)"><i data-lucide="video" class="w-3.5 h-3.5"></i>本週精選影片</span>
-            <span class="absolute bottom-4 right-4 text-xs font-semibold text-white bg-black/30 px-2 py-1 rounded-lg backdrop-blur">18:24</span>
-          </div>
-          <div class="p-5">
-            <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">急診醫學</span>
-            <h3 class="font-display font-bold text-lg text-ink mt-3">急診胸痛的快速鑑別診斷</h3>
-            <p class="text-sm text-muted mt-1.5">從病史、心電圖到危險分層，10 分鐘掌握臨床決策流程。</p>
-            <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--color-border)]">
-              <span class="avatar" style="background:linear-gradient(135deg,#0D9488,#2DD4BF)">林</span>
-              <div class="text-sm"><p class="font-semibold text-ink">林承佑 醫師</p><p class="text-muted text-xs">急診醫學部 主治醫師</p></div>
-            </div>
-          </div>
-        </div>
-        <div class="hidden sm:flex card absolute -bottom-6 -left-6 items-center gap-3 p-3 pr-5 shadow-lg bg-white">
-          <span class="w-11 h-11 rounded-xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="users" class="w-5 h-5"></i></span>
-          <div><p class="font-display font-bold text-ink leading-none text-lg">24,800+</p><p class="text-xs text-muted mt-1">醫護學員正在學習</p></div>
+        <hr class="rule my-5" />
+        <div class="flex items-center justify-between text-sm font-bold">
+          <a href="#authors" class="text-orange hover:underline">認識叮噹醫師 →</a>
+          <a href="#authors" class="text-inksoft hover:text-ink">看編輯群</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ STATS BAR ============ -->
-  <section class="border-y border-[var(--color-border)] bg-white">
-    <div class="container-wide grid grid-cols-2 md:grid-cols-4 gap-6 py-8 text-center">
-      <div class="reveal"><p class="font-display font-extrabold text-3xl text-primary">320+</p><p class="text-sm text-muted mt-1">課程與文章</p></div>
-      <div class="reveal"><p class="font-display font-extrabold text-3xl text-primary">58</p><p class="text-sm text-muted mt-1">專科作者與講師</p></div>
-      <div class="reveal"><p class="font-display font-extrabold text-3xl text-primary">24.8k</p><p class="text-sm text-muted mt-1">活躍醫護學員</p></div>
-      <div class="reveal"><p class="font-display font-extrabold text-3xl text-primary">4.9★</p><p class="text-sm text-muted mt-1">平均課程評分</p></div>
-    </div>
-  </section>
+  <div class="lattice"></div>
 
-  <!-- ============ 求籤遊戲 FORTUNE ============ -->
-  <section id="fortune" class="container-wide py-20">
-    <div class="relative overflow-hidden rounded-[32px] p-8 sm:p-12 reveal border border-[#F0DDB0]" style="background:linear-gradient(135deg,#FFF7ED,#FFFBEB)">
-      <div class="blob" style="width:260px;height:260px;background:#EA580C;top:-90px;right:-60px;opacity:.22"></div>
-      <div class="blob" style="width:240px;height:240px;background:#2DD4BF;bottom:-100px;left:-60px;opacity:.28"></div>
-
-      <div class="relative text-center max-w-xl mx-auto">
-        <span class="chip" style="background:#FDEBD0;color:#9E2A20"><i data-lucide="sparkles" class="w-4 h-4"></i>每日一籤 · 福氣啦</span>
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">求一支籤，得「本日醫學小知識」</h2>
-        <p class="text-muted mt-3">誠心默念你的健康疑問，輕觸籤筒搖一搖，讓今天的醫學靈感降臨。</p>
-      </div>
-
-      <div class="relative mt-10 grid md:grid-cols-2 gap-10 items-center max-w-3xl mx-auto">
-        <!-- 籤筒 -->
-        <div class="flex flex-col items-center">
-          <button id="draw-cup" data-draw class="fortune-cup" aria-label="搖籤">
-            <span class="cup-sticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="cup-body"><span class="cup-emblem">福</span></span>
-          </button>
-          <button data-draw class="btn btn-accent mt-7"><i data-lucide="hand" class="w-4 h-4"></i>搖籤求知識</button>
+  <!-- ============ FLAGSHIP COURSE ============ -->
+  <section id="about" class="bg-paper2 border-y-[1.5px] border-ink">
+    <div class="container-wide py-16 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal order-2 lg:order-1">
+        <p class="eyebrow">Flagship Course</p>
+        <h2 class="font-display font-black text-4xl text-ink mt-3">品牌旗艦課：大道至簡</h2>
+        <p class="mt-4 text-inksoft text-lg">把長壽醫學去蕪存菁，濃縮成最值得先學的核心觀念。看完這一門，你就掌握了「佈局福氣」的整套思考框架。</p>
+        <ul class="mt-6 space-y-3 text-[15px]">
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-orange flex-none mt-0.5"></i>5 章影片，附逐章重點與講義</li>
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-orange flex-none mt-0.5"></i>實證為本，破除常見抗老迷思</li>
+          <li class="flex items-start gap-3"><i data-lucide="check" class="w-5 h-5 text-orange flex-none mt-0.5"></i>由駐站醫師親自審訂</li>
+        </ul>
+        <div class="mt-7 flex items-center gap-5 flex-wrap">
+          <p class="text-lg"><span class="price-old">NT$3,000</span> <span class="price-new text-2xl ml-2">會員免費</span></p>
+          <a href="#membership" class="btn btn-orange">加入會員 · 免費觀看<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
         </div>
-
-        <!-- 籤詩結果 -->
-        <div id="fortune-result" aria-live="polite">
-          <div class="fortune-slip" style="border-style:dashed;text-align:center">
-            <span class="w-14 h-14 mx-auto rounded-2xl grid place-items-center" style="background:#FDEBD0;color:#C0392B"><i data-lucide="scroll-text" class="w-7 h-7"></i></span>
-            <h3 class="font-display font-bold text-lg text-ink mt-4">尚未求籤</h3>
-            <p class="text-sm text-muted mt-1.5">點左邊的籤筒，抽出你的本日醫學小知識。</p>
+        <p class="text-xs text-inksoft mt-3">免費註冊即可成為會員，旗艦課直接觀看。</p>
+      </div>
+      <div class="reveal order-1 lg:order-2">
+        <div class="card overflow-hidden">
+          <div class="thumb" style="aspect-ratio:16/10;background:#E7D2B8">
+            <span class="play-badge" style="width:68px;height:68px"><i data-lucide="play" class="w-7 h-7" style="margin-left:3px"></i></span>
+            <span class="chip absolute top-4 left-4">旗艦課 · 5 章</span>
+            <span class="seal absolute bottom-4 right-4">福</span>
+          </div>
+          <div class="p-5 flex items-center justify-between">
+            <div class="flex items-center gap-3"><span class="avatar">叮</span><div class="text-sm"><p class="font-bold text-ink">叮噹醫師</p><p class="text-inksoft text-xs">老年與長壽醫學顧問</p></div></div>
+            <span class="chip chip-orange">本月精選</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ FEATURES ============ -->
-  <section id="features" class="container-wide py-20">
-    <div class="text-center max-w-2xl mx-auto reveal">
-      <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">為什麼選擇福氣學院</span>
-      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">專為醫學學習而生</h2>
-      <p class="text-muted mt-3">不只是把資料搬上網。我們用教學設計的方式，重新組織每一個臨床知識點。</p>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-      <div class="card p-7 reveal">
-        <span class="w-12 h-12 rounded-2xl bg-primary/10 text-primary grid place-items-center"><i data-lucide="file-text" class="w-6 h-6"></i></span>
-        <h3 class="font-display font-bold text-xl text-ink mt-5">文章 × 影片雙模式</h3>
-        <p class="text-muted mt-2 text-[15px]">每個主題同時提供圖文與影片。想快速查閱看文章，想完整理解看影片，學習節奏由你決定。</p>
-      </div>
-      <div class="card p-7 reveal">
-        <span class="w-12 h-12 rounded-2xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="users-round" class="w-6 h-6"></i></span>
-        <h3 class="font-display font-bold text-xl text-ink mt-5">多作者專科觀點</h3>
-        <p class="text-muted mt-2 text-[15px]">內容由各科臨床醫師與學者共同產出，跨領域、多視角，貼近真實臨床情境。</p>
-      </div>
-      <div class="card p-7 reveal">
-        <span class="w-12 h-12 rounded-2xl bg-secondary/20 text-primarydark grid place-items-center"><i data-lucide="shield-check" class="w-6 h-6"></i></span>
-        <h3 class="font-display font-bold text-xl text-ink mt-5">同儕審閱把關</h3>
-        <p class="text-muted mt-2 text-[15px]">每篇內容上架前皆經同儕審閱，確保資訊正確、引用嚴謹，學得安心。</p>
-      </div>
-      <div class="card p-7 reveal">
-        <span class="w-12 h-12 rounded-2xl bg-primary/10 text-primary grid place-items-center"><i data-lucide="award" class="w-6 h-6"></i></span>
-        <h3 class="font-display font-bold text-xl text-ink mt-5">CME 學分追蹤</h3>
-        <p class="text-muted mt-2 text-[15px]">完成課程自動記錄學習時數，輕鬆累積並匯出繼續教育學分證明。</p>
-      </div>
-      <div class="card p-7 reveal">
-        <span class="w-12 h-12 rounded-2xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="smartphone" class="w-6 h-6"></i></span>
-        <h3 class="font-display font-bold text-xl text-ink mt-5">隨時隨地學習</h3>
-        <p class="text-muted mt-2 text-[15px]">響應式設計，手機、平板、電腦無縫接續。通勤、值班空檔都能進度不中斷。</p>
-      </div>
-      <div class="card p-7 reveal">
-        <span class="w-12 h-12 rounded-2xl bg-secondary/20 text-primarydark grid place-items-center"><i data-lucide="messages-square" class="w-6 h-6"></i></span>
-        <h3 class="font-display font-bold text-xl text-ink mt-5">提問與討論</h3>
-        <p class="text-muted mt-2 text-[15px]">在每個知識點下方直接向作者與同行提問，把零碎疑問變成共同筆記。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ POPULAR CONTENT ============ -->
-  <section class="bg-white border-y border-[var(--color-border)] py-20">
-    <div class="container-wide">
-      <div class="flex items-end justify-between flex-wrap gap-4 reveal">
-        <div>
-          <span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)">熱門精選</span>
-          <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">本月最受歡迎的內容</h2>
-        </div>
-        <a href="courses.html" class="btn btn-ghost">瀏覽全部<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-        <!-- card 1 -->
-        <a href="article.html" class="card reveal block">
-          <div class="thumb thumb-2"><span class="play-badge"><i data-lucide="play" class="w-5 h-5 text-primary" style="margin-left:2px"></i></span><span class="absolute bottom-3 right-3 text-xs font-semibold text-white bg-black/30 px-2 py-0.5 rounded backdrop-blur">12:05</span></div>
-          <div class="p-5">
-            <div class="flex items-center gap-2"><span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">心臟內科</span><span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)"><i data-lucide="video" class="w-3 h-3"></i>影片</span></div>
-            <h3 class="font-display font-bold text-lg text-ink mt-3">心電圖判讀入門：從正常到致命心律</h3>
-            <p class="text-sm text-muted mt-1.5 line-clamp-2">建立一套有系統的判讀步驟，快速辨識危及生命的心律變化。</p>
-            <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--color-border)]">
-              <span class="avatar" style="background:linear-gradient(135deg,#EA580C,#F59E0B)">陳</span>
-              <div class="text-sm"><p class="font-semibold text-ink">陳怡君 醫師</p><p class="text-muted text-xs">心臟內科</p></div>
-            </div>
-          </div>
-        </a>
-        <!-- card 2 -->
-        <a href="article.html" class="card reveal block">
-          <div class="thumb thumb-3"><span class="chip absolute top-3 left-3" style="background:rgba(255,255,255,.9);color:var(--color-accent)"><i data-lucide="file-text" class="w-3 h-3"></i>文章</span></div>
-          <div class="p-5">
-            <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">感染科</span>
-            <h3 class="font-display font-bold text-lg text-ink mt-3">抗生素的正確使用與抗藥性</h3>
-            <p class="text-sm text-muted mt-1.5 line-clamp-2">從作用機轉到臨床選藥原則，一次釐清最常見的用藥迷思。</p>
-            <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--color-border)]">
-              <span class="avatar" style="background:linear-gradient(135deg,#0F766E,#14B8A6)">黃</span>
-              <div class="text-sm"><p class="font-semibold text-ink">黃志明 醫師</p><p class="text-muted text-xs">感染科</p></div>
-            </div>
-          </div>
-        </a>
-        <!-- card 3 -->
-        <a href="article.html" class="card reveal block">
-          <div class="thumb thumb-5"><span class="play-badge"><i data-lucide="play" class="w-5 h-5 text-primary" style="margin-left:2px"></i></span><span class="absolute bottom-3 right-3 text-xs font-semibold text-white bg-black/30 px-2 py-0.5 rounded backdrop-blur">21:40</span></div>
-          <div class="p-5">
-            <div class="flex items-center gap-2"><span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">影像判讀</span><span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)"><i data-lucide="video" class="w-3 h-3"></i>影片</span></div>
-            <h3 class="font-display font-bold text-lg text-ink mt-3">胸部 X 光：系統性判讀的 ABCDE</h3>
-            <p class="text-sm text-muted mt-1.5 line-clamp-2">用一致的順序判讀每一張胸片，不再漏掉關鍵病灶。</p>
-            <div class="flex items-center gap-3 mt-4 pt-4 border-t border-[var(--color-border)]">
-              <span class="avatar" style="background:linear-gradient(135deg,#0891B2,#22D3EE)">王</span>
-              <div class="text-sm"><p class="font-semibold text-ink">王思婷 醫師</p><p class="text-muted text-xs">放射診斷科</p></div>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CATEGORIES ============ -->
+  <!-- ============ 知識六軸 CATEGORIES ============ -->
   <section class="container-wide py-20">
-    <div class="text-center max-w-2xl mx-auto reveal">
-      <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">探索領域</span>
-      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">依專科探索知識</h2>
-      <p class="text-muted mt-3">從基礎醫學到臨床各科，找到你正需要的主題。</p>
+    <div class="flex items-end justify-between flex-wrap gap-4 reveal">
+      <div>
+        <p class="eyebrow">六大知識軸</p>
+        <h2 class="font-display font-black text-4xl text-ink mt-3">把長壽，拆成可佈局的六件事</h2>
+      </div>
+      <a href="courses.html" class="btn btn-outline">全部課程分類<i data-lucide="arrow-right" class="w-4 h-4"></i></a>
     </div>
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">
-      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-primary/10 text-primary grid place-items-center"><i data-lucide="heart-pulse" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">心臟內科</p></a>
-      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="ambulance" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">急診醫學</p></a>
-      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-secondary/20 text-primarydark grid place-items-center"><i data-lucide="baby" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">兒科</p></a>
-      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-primary/10 text-primary grid place-items-center"><i data-lucide="scan" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">影像判讀</p></a>
-      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-accent/10 text-accent grid place-items-center"><i data-lucide="microscope" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">感染科</p></a>
-      <a href="courses.html" class="card p-5 text-center reveal"><span class="w-12 h-12 mx-auto rounded-2xl bg-secondary/20 text-primarydark grid place-items-center"><i data-lucide="brain" class="w-6 h-6"></i></span><p class="font-semibold text-ink mt-3 text-sm">神經內科</p></a>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      <a href="courses.html" class="card card-hover p-6 reveal"><span class="w-12 h-12 rounded-md bg-orange-soft border-[1.5px] border-ink grid place-items-center text-orange" style="background:var(--orange-soft)"><i data-lucide="salad" class="w-6 h-6"></i></span><h3 class="font-display font-black text-xl text-ink mt-4">長壽飲食</h3><p class="text-sm text-inksoft mt-1.5">蛋白質、纖維與飲食節律，吃出健康老化。</p></a>
+      <a href="courses.html" class="card card-hover p-6 reveal"><span class="w-12 h-12 rounded-md border-[1.5px] border-ink grid place-items-center text-orange" style="background:var(--orange-soft)"><i data-lucide="dumbbell" class="w-6 h-6"></i></span><h3 class="font-display font-black text-xl text-ink mt-4">運動與肌力</h3><p class="text-sm text-inksoft mt-1.5">阻力訓練與平衡，守住老後的行動本錢。</p></a>
+      <a href="courses.html" class="card card-hover p-6 reveal"><span class="w-12 h-12 rounded-md border-[1.5px] border-ink grid place-items-center text-orange" style="background:var(--orange-soft)"><i data-lucide="moon" class="w-6 h-6"></i></span><h3 class="font-display font-black text-xl text-ink mt-4">睡眠修復</h3><p class="text-sm text-inksoft mt-1.5">睡眠是抗老地基，從作息到睡眠衛生。</p></a>
+      <a href="courses.html" class="card card-hover p-6 reveal"><span class="w-12 h-12 rounded-md border-[1.5px] border-ink grid place-items-center text-orange" style="background:var(--orange-soft)"><i data-lucide="brain" class="w-6 h-6"></i></span><h3 class="font-display font-black text-xl text-ink mt-4">大腦與認知</h3><p class="text-sm text-inksoft mt-1.5">從社交到血壓，延緩認知退化的關鍵。</p></a>
+      <a href="courses.html" class="card card-hover p-6 reveal"><span class="w-12 h-12 rounded-md border-[1.5px] border-ink grid place-items-center text-orange" style="background:var(--orange-soft)"><i data-lucide="activity" class="w-6 h-6"></i></span><h3 class="font-display font-black text-xl text-ink mt-4">慢病管理</h3><p class="text-sm text-inksoft mt-1.5">三高、代謝與多重用藥的長期照護策略。</p></a>
+      <a href="courses.html" class="card card-hover p-6 reveal"><span class="w-12 h-12 rounded-md border-[1.5px] border-ink grid place-items-center text-orange" style="background:var(--orange-soft)"><i data-lucide="heart-handshake" class="w-6 h-6"></i></span><h3 class="font-display font-black text-xl text-ink mt-4">身心平衡</h3><p class="text-sm text-inksoft mt-1.5">壓力、正念與人際連結，照顧老化中的心。</p></a>
     </div>
   </section>
 
-  <!-- ============ AUTHORS ============ -->
-  <section id="authors" class="bg-white border-y border-[var(--color-border)] py-20">
-    <div class="container-wide">
+  <!-- ============ 福氣籤詩 FORTUNE ============ -->
+  <section id="fortune" class="bg-paper2 border-y-[1.5px] border-ink">
+    <div class="container-wide py-20">
       <div class="text-center max-w-2xl mx-auto reveal">
-        <span class="chip" style="background:var(--color-accent-soft);color:var(--color-accent)">多作者平台</span>
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">向真正的臨床專家學習</h2>
-        <p class="text-muted mt-3">58 位來自各專科的醫師與學者，把第一線經驗濃縮成課程。</p>
+        <p class="eyebrow">福氣籤詩 · Daily Fortune</p>
+        <h2 class="font-display font-black text-4xl text-ink mt-3">求一支福氣籤詩，得一則「本日醫學小知識」</h2>
+        <p class="text-inksoft mt-3">福氣不是求來的，是佈局來的 —— 每一支籤，都把運氣化成一則今天就能做的長壽佈局。</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-        <div class="card p-6 text-center reveal">
-          <span class="avatar mx-auto" style="width:72px;height:72px;font-size:1.5rem;background:linear-gradient(135deg,#0D9488,#2DD4BF)">林</span>
-          <h3 class="font-display font-bold text-lg text-ink mt-4">林承佑 醫師</h3>
-          <p class="text-sm text-primary font-medium">急診醫學部 主治醫師</p>
-          <p class="text-xs text-muted mt-2">28 篇內容 · 4.9★</p>
+      <div class="mt-12 grid md:grid-cols-2 gap-12 items-center max-w-3xl mx-auto">
+        <div class="flex flex-col items-center">
+          <button id="wish-well" data-wish class="wish-well" aria-label="求一支籤">
+            <span class="well-ring"><span class="well-emblem">福</span></span>
+          </button>
+          <button data-wish class="btn btn-orange mt-8"><i data-lucide="sparkles" class="w-4 h-4"></i>求一支籤</button>
         </div>
-        <div class="card p-6 text-center reveal">
-          <span class="avatar mx-auto" style="width:72px;height:72px;font-size:1.5rem;background:linear-gradient(135deg,#EA580C,#F59E0B)">陳</span>
-          <h3 class="font-display font-bold text-lg text-ink mt-4">陳怡君 醫師</h3>
-          <p class="text-sm text-primary font-medium">心臟內科</p>
-          <p class="text-xs text-muted mt-2">19 篇內容 · 4.8★</p>
+        <div id="wish-result" aria-live="polite">
+          <div class="wish-slip" style="border-style:dashed;text-align:center">
+            <span class="seal mx-auto">籤</span>
+            <h3 class="font-display font-black text-xl text-ink mt-4">尚未求籤</h3>
+            <p class="text-sm text-inksoft mt-1.5">點上方求一支福氣籤詩，換一則你的本日醫學小知識。</p>
+          </div>
         </div>
-        <div class="card p-6 text-center reveal">
-          <span class="avatar mx-auto" style="width:72px;height:72px;font-size:1.5rem;background:linear-gradient(135deg,#0891B2,#22D3EE)">王</span>
-          <h3 class="font-display font-bold text-lg text-ink mt-4">王思婷 醫師</h3>
-          <p class="text-sm text-primary font-medium">放射診斷科</p>
-          <p class="text-xs text-muted mt-2">23 篇內容 · 5.0★</p>
-        </div>
-        <div class="card p-6 text-center reveal">
-          <span class="avatar mx-auto" style="width:72px;height:72px;font-size:1.5rem;background:linear-gradient(135deg,#7C3AED,#2DD4BF)">黃</span>
-          <h3 class="font-display font-bold text-lg text-ink mt-4">黃志明 醫師</h3>
-          <p class="text-sm text-primary font-medium">感染科</p>
-          <p class="text-xs text-muted mt-2">31 篇內容 · 4.9★</p>
-        </div>
-      </div>
-      <div class="text-center mt-10 reveal">
-        <a href="#" class="btn btn-accent"><i data-lucide="pen-line" class="w-4 h-4"></i>成為平台作者</a>
       </div>
     </div>
   </section>
 
-  <!-- ============ CTA ============ -->
-  <section class="container-wide py-20">
-    <div class="relative overflow-hidden rounded-[32px] px-8 py-16 text-center reveal" style="background:linear-gradient(135deg,var(--color-primary),var(--color-primarydark))">
-      <div class="blob" style="width:260px;height:260px;background:#EA580C;top:-60px;right:-40px;opacity:.4"></div>
-      <div class="blob" style="width:240px;height:240px;background:#2DD4BF;bottom:-80px;left:-40px;opacity:.5"></div>
-      <div class="relative">
-        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">今天就開始你的醫學學習旅程</h2>
-        <p class="text-white/85 mt-4 max-w-xl mx-auto">免費註冊，立即解鎖數十堂入門課程。隨時升級，學習無上限。</p>
-        <div class="flex items-center justify-center gap-3 mt-8 flex-wrap">
-          <a href="courses.html" class="btn btn-accent">免費開始</a>
-          <a href="courses.html" class="btn bg-white text-primary">瀏覽課程</a>
+  <!-- ============ 作者介紹 AUTHORS ============ -->
+  <section id="authors" class="container-wide py-20">
+    <div class="text-center max-w-2xl mx-auto reveal">
+      <p class="eyebrow">多作者編輯群</p>
+      <h2 class="font-display font-black text-4xl text-ink mt-3">向真正的臨床專家學習</h2>
+      <p class="text-inksoft mt-3">由各專科醫師輪值編輯，把第一線經驗，寫成負責任的長壽醫學。</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+      <div class="card card-hover p-6 reveal"><span class="avatar" style="width:64px;height:64px;font-size:1.5rem">叮</span><h3 class="font-display font-black text-lg text-ink mt-4">叮噹醫師</h3><p class="text-sm text-orange font-bold">老年與長壽醫學</p><p class="text-xs text-inksoft mt-2">MRCP UK · 12 篇內容</p></div>
+      <div class="card card-hover p-6 reveal"><span class="avatar" style="width:64px;height:64px;font-size:1.5rem">林</span><h3 class="font-display font-black text-lg text-ink mt-4">林承佑 醫師</h3><p class="text-sm text-orange font-bold">復健與肌力醫學</p><p class="text-xs text-inksoft mt-2">9 篇內容</p></div>
+      <div class="card card-hover p-6 reveal"><span class="avatar" style="width:64px;height:64px;font-size:1.5rem">陳</span><h3 class="font-display font-black text-lg text-ink mt-4">陳怡君 醫師</h3><p class="text-sm text-orange font-bold">心血管與代謝</p><p class="text-xs text-inksoft mt-2">7 篇內容</p></div>
+      <div class="card card-hover p-6 reveal"><span class="avatar" style="width:64px;height:64px;font-size:1.5rem">王</span><h3 class="font-display font-black text-lg text-ink mt-4">王思婷 醫師</h3><p class="text-sm text-orange font-bold">營養與腸道健康</p><p class="text-xs text-inksoft mt-2">8 篇內容</p></div>
+    </div>
+
+    <!-- become an author -->
+    <div class="card mt-10 p-8 sm:p-10 reveal flex flex-col md:flex-row items-start md:items-center gap-6 justify-between" style="background:var(--orange-soft)">
+      <div>
+        <p class="eyebrow">徵求醫師編輯</p>
+        <h3 class="font-display font-black text-2xl text-ink mt-2">把你的臨床經驗，變成一門課</h3>
+        <p class="text-inksoft mt-2 max-w-xl">提交一支旗艦影片、專業證照與個人簡介，通過審核即可成為平台作者，建立你的個人主頁與作品集。</p>
+      </div>
+      <a href="#" class="btn btn-dark flex-none"><i data-lucide="pen-line" class="w-4 h-4"></i>申請成為作者</a>
+    </div>
+  </section>
+
+  <!-- ============ 會員方案 MEMBERSHIP ============ -->
+  <section id="membership" class="bg-paper2 border-y-[1.5px] border-ink">
+    <div class="container-wide py-20">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <p class="eyebrow">會員方案 · Membership</p>
+        <h2 class="font-display font-black text-4xl text-ink mt-3">先佈局，再享福</h2>
+        <p class="text-inksoft mt-3">免費註冊就能看旗艦課；升級會員，解鎖全站課程與會員價。</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 mt-12 items-stretch">
+        <div class="card-flat p-7 reveal flex flex-col">
+          <p class="eyebrow text-inksoft" style="color:var(--ink-soft)">免費註冊</p>
+          <p class="font-display font-black text-4xl text-ink mt-2">NT$0</p>
+          <p class="text-inksoft text-sm mt-1">適合先試試看</p>
+          <ul class="mt-5 space-y-2.5 text-sm flex-1">
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orange flex-none"></i>觀看品牌旗艦課</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orange flex-none"></i>免費文章與福氣籤詩</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orange flex-none"></i>每月電子報</li>
+          </ul>
+          <a href="#" class="btn btn-outline w-full justify-center mt-6">免費註冊</a>
+        </div>
+        <div class="card p-7 reveal flex flex-col relative" style="background:var(--ink)">
+          <span class="sticker absolute -top-4 right-5 text-sm">最推薦</span>
+          <p class="eyebrow">年度會員</p>
+          <p class="font-display font-black text-4xl text-white mt-2">NT$1,980<span class="text-lg text-white/60"> /年</span></p>
+          <p class="text-white/60 text-sm mt-1">最划算，全站暢學</p>
+          <ul class="mt-5 space-y-2.5 text-sm flex-1 text-white/90">
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orangebright flex-none"></i>全站課程無限觀看</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orangebright flex-none"></i>付費課程享會員價</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orangebright flex-none"></i>講義下載與課程證書</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orangebright flex-none"></i>新課優先觀看</li>
+          </ul>
+          <a href="#" class="btn btn-orange w-full justify-center mt-6">加入年度會員</a>
+        </div>
+        <div class="card-flat p-7 reveal flex flex-col">
+          <p class="eyebrow text-inksoft" style="color:var(--ink-soft)">單堂購買</p>
+          <p class="font-display font-black text-4xl text-ink mt-2">依課程</p>
+          <p class="text-inksoft text-sm mt-1">只買你需要的</p>
+          <ul class="mt-5 space-y-2.5 text-sm flex-1">
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orange flex-none"></i>永久觀看單一課程</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orange flex-none"></i>原價 vs 會員價清楚標示</li>
+            <li class="flex gap-2"><i data-lucide="check" class="w-5 h-5 text-orange flex-none"></i>支援購物車結帳</li>
+          </ul>
+          <a href="courses.html" class="btn btn-outline w-full justify-center mt-6">瀏覽課程</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ FOOTER ============ -->
-  <footer class="bg-ink text-white/80">
+  <footer class="bg-ink text-white/75">
     <div class="container-wide py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
       <div>
-        <div class="flex items-center gap-2.5 text-white">
-          <span class="w-9 h-9 rounded-xl bg-primary grid place-items-center"><i data-lucide="stethoscope" class="w-5 h-5"></i></span>
-          <span class="font-display font-extrabold text-xl">福氣學院 Hokkeela</span>
+        <div class="flex items-center gap-3 text-white">
+          <span class="w-10 h-10 rounded-md bg-orangebright grid place-items-center border-[1.5px] border-white/20 font-display font-black text-xl">福</span>
+          <span class="font-display font-black text-lg">福氣學院 Hokkeela</span>
         </div>
-        <p class="text-sm mt-4 text-white/60 max-w-xs">多作者醫學線上學習平台，讓專業知識真正被理解、被使用。</p>
+        <p class="text-sm mt-4 text-white/55 max-w-xs">華人長壽醫學知識平台。福氣，不是求來的，是佈局來的。</p>
       </div>
+      <div><h4 class="font-display font-black text-white mb-4">學習</h4><ul class="space-y-2.5 text-sm"><li><a href="courses.html" class="hover:text-orangebright">全部課程</a></li><li><a href="courses.html" class="hover:text-orangebright">課程分類</a></li><li><a href="#fortune" class="hover:text-orangebright">福氣籤詩</a></li><li><a href="#membership" class="hover:text-orangebright">會員方案</a></li></ul></div>
+      <div><h4 class="font-display font-black text-white mb-4">平台</h4><ul class="space-y-2.5 text-sm"><li><a href="#authors" class="hover:text-orangebright">作者介紹</a></li><li><a href="#" class="hover:text-orangebright">成為作者</a></li><li><a href="#about" class="hover:text-orangebright">關於網站</a></li><li><a href="#" class="hover:text-orangebright">常見問題</a></li></ul></div>
       <div>
-        <h4 class="font-display font-bold text-white mb-4">學習</h4>
-        <ul class="space-y-2.5 text-sm"><li><a href="courses.html" class="hover:text-secondary">所有課程</a></li><li><a href="courses.html" class="hover:text-secondary">精選文章</a></li><li><a href="#" class="hover:text-secondary">CME 學分</a></li><li><a href="#" class="hover:text-secondary">學習路徑</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-display font-bold text-white mb-4">平台</h4>
-        <ul class="space-y-2.5 text-sm"><li><a href="#authors" class="hover:text-secondary">講師團隊</a></li><li><a href="#" class="hover:text-secondary">成為作者</a></li><li><a href="#features" class="hover:text-secondary">關於我們</a></li><li><a href="#" class="hover:text-secondary">常見問題</a></li></ul>
-      </div>
-      <div>
-        <h4 class="font-display font-bold text-white mb-4">訂閱新知</h4>
-        <p class="text-sm text-white/60 mb-3">每週精選一篇深度醫學內容，寄到你的信箱。</p>
+        <h4 class="font-display font-black text-white mb-4">訂閱長壽電子報</h4>
+        <p class="text-sm text-white/55 mb-3">每週一則實證長壽佈局，寄到你的信箱。</p>
         <form class="flex gap-2" onsubmit="return false;">
-          <input type="email" placeholder="你的 Email" class="flex-1 rounded-xl px-3 py-2.5 text-ink text-sm outline-none" aria-label="Email" />
-          <button class="btn btn-accent px-4">訂閱</button>
+          <input type="email" placeholder="你的 Email" class="flex-1 rounded-md px-3 py-2.5 text-ink text-sm outline-none border-[1.5px] border-white/20" aria-label="Email" />
+          <button class="btn btn-orange px-4">訂閱</button>
         </form>
       </div>
     </div>
     <div class="border-t border-white/10">
-      <div class="container-wide py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/50">
+      <div class="container-wide py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/45">
         <p>© 2026 福氣學院 Hokkeela. 內容僅供醫學教育用途，不構成個別醫療建議。</p>
         <div class="flex gap-5"><a href="#" class="hover:text-white">隱私政策</a><a href="#" class="hover:text-white">使用條款</a></div>
       </div>
