@@ -1,0 +1,22 @@
+{
+  "name": "hokkeela",
+  "version": "1.0.0",
+  "description": "多作者醫學知識線上教學平台的前端 demo。以**文章 + 影片**呈現各專科課程，風格專業又活潑。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:41729/git/drmichelletang-cyber/hokkeela"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "lucide": "^1.22.0"
+  }
+}
