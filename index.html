@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>醫學堂 MediLearn — 讓醫學知識，觸手可及</title>
+  <title>福氣學院 Hokkeela — 讓醫學知識，觸手可及</title>
   <meta name="description" content="多作者醫學線上學習平台。以文章與影片的方式，提供臨床、醫學教育與健康知識的專業課程。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,12 +20,13 @@
         <span class="w-9 h-9 rounded-xl bg-primary text-white grid place-items-center shadow-md">
           <i data-lucide="stethoscope" class="w-5 h-5"></i>
         </span>
-        <span class="font-display font-extrabold text-xl text-ink">醫學堂<span class="text-primary"> ·</span><span class="text-secondary text-sm font-bold align-top ml-0.5">MediLearn</span></span>
+        <span class="font-display font-extrabold text-xl text-ink">福氣學院<span class="text-primary"> ·</span><span class="text-secondary text-sm font-bold align-top ml-0.5">Hokkeela</span></span>
       </a>
 
       <nav class="hidden md:flex items-center gap-7 text-[15px] font-medium text-ink">
         <a href="courses.html" class="hover:text-primary transition">課程</a>
         <a href="courses.html" class="hover:text-primary transition">文章</a>
+        <a href="#fortune" class="hover:text-accent transition flex items-center gap-1"><i data-lucide="sparkles" class="w-4 h-4 text-accent"></i>每日求籤</a>
         <a href="#authors" class="hover:text-primary transition">講師團隊</a>
         <a href="#features" class="hover:text-primary transition">關於平台</a>
       </nav>
@@ -43,6 +44,7 @@
       <div class="container-wide py-4 flex flex-col gap-1 text-ink font-medium">
         <a href="courses.html" class="py-2.5">課程</a>
         <a href="courses.html" class="py-2.5">文章</a>
+        <a href="#fortune" class="py-2.5">每日求籤</a>
         <a href="#authors" class="py-2.5">講師團隊</a>
         <a href="#features" class="py-2.5">關於平台</a>
         <a href="courses.html" class="btn btn-primary mt-2 justify-center">免費開始學習</a>
@@ -116,10 +118,44 @@
     </div>
   </section>
 
+  <!-- ============ 求籤遊戲 FORTUNE ============ -->
+  <section id="fortune" class="container-wide py-20">
+    <div class="relative overflow-hidden rounded-[32px] p-8 sm:p-12 reveal border border-[#F0DDB0]" style="background:linear-gradient(135deg,#FFF7ED,#FFFBEB)">
+      <div class="blob" style="width:260px;height:260px;background:#EA580C;top:-90px;right:-60px;opacity:.22"></div>
+      <div class="blob" style="width:240px;height:240px;background:#2DD4BF;bottom:-100px;left:-60px;opacity:.28"></div>
+
+      <div class="relative text-center max-w-xl mx-auto">
+        <span class="chip" style="background:#FDEBD0;color:#9E2A20"><i data-lucide="sparkles" class="w-4 h-4"></i>每日一籤 · 福氣啦</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">求一支籤，得「本日醫學小知識」</h2>
+        <p class="text-muted mt-3">誠心默念你的健康疑問，輕觸籤筒搖一搖，讓今天的醫學靈感降臨。</p>
+      </div>
+
+      <div class="relative mt-10 grid md:grid-cols-2 gap-10 items-center max-w-3xl mx-auto">
+        <!-- 籤筒 -->
+        <div class="flex flex-col items-center">
+          <button id="draw-cup" data-draw class="fortune-cup" aria-label="搖籤">
+            <span class="cup-sticks"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <span class="cup-body"><span class="cup-emblem">福</span></span>
+          </button>
+          <button data-draw class="btn btn-accent mt-7"><i data-lucide="hand" class="w-4 h-4"></i>搖籤求知識</button>
+        </div>
+
+        <!-- 籤詩結果 -->
+        <div id="fortune-result">
+          <div class="fortune-slip" style="border-style:dashed;text-align:center">
+            <span class="w-14 h-14 mx-auto rounded-2xl grid place-items-center" style="background:#FDEBD0;color:#C0392B"><i data-lucide="scroll-text" class="w-7 h-7"></i></span>
+            <h3 class="font-display font-bold text-lg text-ink mt-4">尚未求籤</h3>
+            <p class="text-sm text-muted mt-1.5">點左邊的籤筒，抽出你的本日醫學小知識。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FEATURES ============ -->
   <section id="features" class="container-wide py-20">
     <div class="text-center max-w-2xl mx-auto reveal">
-      <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">為什麼選擇醫學堂</span>
+      <span class="chip" style="background:var(--color-muted);color:var(--color-primarydark)">為什麼選擇福氣學院</span>
       <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-ink mt-4">專為醫學學習而生</h2>
       <p class="text-muted mt-3">不只是把資料搬上網。我們用教學設計的方式，重新組織每一個臨床知識點。</p>
     </div>
@@ -291,7 +327,7 @@
       <div>
         <div class="flex items-center gap-2.5 text-white">
           <span class="w-9 h-9 rounded-xl bg-primary grid place-items-center"><i data-lucide="stethoscope" class="w-5 h-5"></i></span>
-          <span class="font-display font-extrabold text-xl">醫學堂 MediLearn</span>
+          <span class="font-display font-extrabold text-xl">福氣學院 Hokkeela</span>
         </div>
         <p class="text-sm mt-4 text-white/60 max-w-xs">多作者醫學線上學習平台，讓專業知識真正被理解、被使用。</p>
       </div>
@@ -314,7 +350,7 @@
     </div>
     <div class="border-t border-white/10">
       <div class="container-wide py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-white/50">
-        <p>© 2026 醫學堂 MediLearn. 內容僅供醫學教育用途，不構成個別醫療建議。</p>
+        <p>© 2026 福氣學院 Hokkeela. 內容僅供醫學教育用途，不構成個別醫療建議。</p>
         <div class="flex gap-5"><a href="#" class="hover:text-white">隱私政策</a><a href="#" class="hover:text-white">使用條款</a></div>
       </div>
     </div>
