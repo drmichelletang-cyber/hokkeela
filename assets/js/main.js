@@ -25,22 +25,45 @@
     }
   });
 
-  // Scroll reveal
+  // Scroll reveal + stagger + seal stamp + stat count-up
   document.addEventListener('DOMContentLoaded', function () {
-    const els = document.querySelectorAll('.reveal');
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = document.querySelectorAll('.reveal, .stagger, .seal-stamp');
+    const counters = document.querySelectorAll('[data-count]');
+
+    function countUp(el) {
+      const target = parseFloat(el.getAttribute('data-count')) || 0;
+      if (reduce) { el.textContent = String(target); return; }
+      const dur = 900; let t0 = null;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        const p = Math.min((ts - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = String(Math.round(target * eased));
+        if (p < 1) requestAnimationFrame(step); else el.textContent = String(target);
+      }
+      el.textContent = '0';
+      requestAnimationFrame(step);
+    }
+
     if (!('IntersectionObserver' in window)) {
       els.forEach((el) => el.classList.add('in'));
+      counters.forEach(countUp);
       return;
     }
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
       });
     }, { threshold: 0.12 });
     els.forEach((el) => io.observe(el));
+
+    const cio = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { countUp(entry.target); cio.unobserve(entry.target); }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach((el) => cio.observe(el));
   });
 
   // Course / article filtering (used on courses page)

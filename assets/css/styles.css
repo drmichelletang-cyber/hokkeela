@@ -191,9 +191,45 @@ a { color: inherit; text-decoration: none; }
 .reveal { opacity: 0; transform: translateY(20px); transition: opacity .45s ease, transform .45s ease; }
 .reveal.in { opacity: 1; transform: none; }
 
+/* staggered children inside a revealed block */
+.stagger > * { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
+.stagger.in > * { opacity: 1; transform: none; }
+.stagger.in > *:nth-child(2) { transition-delay: .08s; }
+.stagger.in > *:nth-child(3) { transition-delay: .16s; }
+.stagger.in > *:nth-child(4) { transition-delay: .24s; }
+.stagger.in > *:nth-child(5) { transition-delay: .32s; }
+.stagger.in > *:nth-child(6) { transition-delay: .40s; }
+
+/* ---------- Hero entrance ---------- */
+.hl { display: block; opacity: 0; transform: translateY(30px); animation: hlRise .75s cubic-bezier(.2,.8,.2,1) both; }
+.hl:nth-child(1) { animation-delay: .08s; }
+.hl:nth-child(2) { animation-delay: .22s; }
+.hl:nth-child(3) { animation-delay: .36s; }
+@keyframes hlRise { to { opacity: 1; transform: none; } }
+
+/* the orange highlight "draws" in under the last line */
+.ul-accent::after { transform: scaleX(0); transform-origin: left center; animation: ulDraw .55s ease both; animation-delay: 1s; }
+@keyframes ulDraw { to { transform: scaleX(1); } }
+
+/* 福氣啦 sticker pops in */
+.sticker { animation: stickerPop .6s cubic-bezier(.34,1.56,.64,1) both; animation-delay: .6s; }
+@keyframes stickerPop { 0% { opacity: 0; transform: rotate(8deg) scale(.3); } 100% { opacity: 1; transform: rotate(8deg) scale(1); } }
+
+/* seal "stamps" in when scrolled into view */
+.seal-stamp { opacity: 0; }
+.seal-stamp.in { animation: sealStamp .45s cubic-bezier(.34,1.56,.64,1) both; }
+@keyframes sealStamp { 0% { opacity: 0; transform: rotate(-4deg) scale(1.6); } 60% { opacity: 1; } 100% { opacity: 1; transform: rotate(-4deg) scale(1); } }
+
+/* 福氣籤詩 well: gentle idle float + hint pulse */
+@keyframes wellFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+.wish-well:not(.tossing) .well-ring { animation: wellFloat 3.6s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; }
+  .reveal, .stagger > *, .hl { opacity: 1 !important; transform: none !important; }
+  .ul-accent::after { transform: scaleX(1) !important; }
+  .sticker, .seal-stamp { opacity: 1 !important; transform: rotate(8deg) !important; }
+  .seal-stamp { transform: rotate(-4deg) !important; }
 }
 
 /* focus visibility */
